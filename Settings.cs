@@ -7,8 +7,6 @@
     //  The SettingsSaving event is raised before the setting values are saved.
     public sealed partial class Settings
     {
-        public Settings() { }
-
         public static void FindAndUpdate<T>(string key, T value)
         {
             try
@@ -21,7 +19,6 @@
                 System.Console.WriteLine(ex);
             }
         }
-
 
         private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e)
         {

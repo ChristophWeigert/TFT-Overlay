@@ -11,21 +11,15 @@ namespace TFT_Overlay
                 "IsOptional",
                 typeof(bool),
                 typeof(OptionalRadioButton),
-                new PropertyMetadata((bool)true,
+                new PropertyMetadata(true,
                     (obj, args) =>
                     {
                         ((OptionalRadioButton)obj).OnIsOptionalChanged(args);
                     }));
         public bool IsOptional
         {
-            get
-            {
-                return (bool)GetValue(IsOptionalProperty);
-            }
-            set
-            {
-                SetValue(IsOptionalProperty, value);
-            }
+            get => (bool)this.GetValue(IsOptionalProperty);
+            set => this.SetValue(IsOptionalProperty, value);
         }
         private void OnIsOptionalChanged(DependencyPropertyChangedEventArgs args)
         {

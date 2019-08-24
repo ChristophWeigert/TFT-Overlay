@@ -33,8 +33,8 @@ namespace TFT_Overlay.Utilities
 
         public string RadioSelection
         {
-            get { return (string)GetValue(RadioSelectionProperty); }
-            set { SetValue(RadioSelectionProperty, value); }
+            get => (string)this.GetValue(RadioSelectionProperty);
+            set => this.SetValue(RadioSelectionProperty, value);
         }
     }
 

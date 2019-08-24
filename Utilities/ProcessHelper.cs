@@ -14,7 +14,7 @@ namespace TFT_Overlay.Utilities
 
         public static string GetActiveProcessName()
         {
-            var hwnd = GetForegroundWindow();
+            IntPtr hwnd = GetForegroundWindow();
             GetWindowThreadProcessId(hwnd, out uint pid);
 
             return Process.GetProcessById((int)pid).ProcessName;

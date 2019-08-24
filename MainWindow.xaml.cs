@@ -19,7 +19,7 @@ namespace TFT_Overlay
         [System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
         public IntPtr myHandle;
-        private System.Timers.Timer tTop; 
+        private readonly System.Timers.Timer tTop; 
 
         private readonly Cursor LoLNormal = CustomCursor.FromByteArray(Properties.Resources.LoLNormal);
         private readonly Cursor LoLPointer = CustomCursor.FromByteArray(Properties.Resources.LoLPointer);
@@ -31,35 +31,35 @@ namespace TFT_Overlay
         private bool canDrag;
         public bool CanDrag
         {
-            get => canDrag;
+            get => this.canDrag;
             set
             {
-                canDrag = value;
+                this.canDrag = value;
                 Settings.FindAndUpdate("Lock", !value);
             }
         }
 
         public MainWindow()
         {
-            InitializeComponent();
-            LoadStringResource(Settings.Default.Language);
-            this.Cursor = LoLNormal;
+            this.InitializeComponent();
+            this.LoadStringResource(Settings.Default.Language);
+            this.Cursor = this.LoLNormal;
 
             this.WindowState = System.Windows.WindowState.Normal;
             this.ShowInTaskbar = true;
-            this.Topmost = OnTop;
-            myHandle = new System.Windows.Interop.WindowInteropHelper(this).Handle;
+            this.Topmost = this.OnTop;
+            this.myHandle = new System.Windows.Interop.WindowInteropHelper(this).Handle;
             //...
-            tTop = new System.Timers.Timer(15000);//set Timer  
-            tTop.Elapsed += new System.Timers.ElapsedEventHandler(theout);
-            tTop.AutoReset = true;
-            tTop.Enabled = true; 
+            this.tTop = new System.Timers.Timer(15000);//set Timer  
+            this.tTop.Elapsed += this.theout;
+            this.tTop.AutoReset = true;
+            this.tTop.Enabled = true;
 
-            CanDrag = !Settings.Default.Lock;
+            this.CanDrag = !Settings.Default.Lock;
 
-            if (Settings.Default.AutoDim == true)
+            if (Settings.Default.AutoDim)
             {
-                Thread t = new Thread(new ThreadStart(AutoDim))
+                Thread t = new Thread(this.AutoDim)
                 {
                     IsBackground = true
                 };
@@ -70,28 +70,26 @@ namespace TFT_Overlay
 
         public void theout(object source, System.Timers.ElapsedEventArgs e)
         {
-            if (OnTop)
+            if (this.OnTop)
             {
-                if (myHandle != GetForegroundWindow()) //let the win always on focus
+                if (this.myHandle != GetForegroundWindow()) //let the win always on focus
                 {
-                    SetForegroundWindow(myHandle);
+                    SetForegroundWindow(this.myHandle);
                 }
                 try
                 {
                     this.Dispatcher.Invoke(
-                        new Action(
-                            delegate
-                            {
-                                this.Topmost = false;
-                                this.Topmost = true;
+                        delegate
+                        {
+                            this.Topmost = false;
+                            this.Topmost = true;
 
-                            }
-                        )
+                        }
                     );
                 }
                 catch (System.Threading.Tasks.TaskCanceledException errMsg)
                 {
-                    tTop.Stop();
+                    this.tTop.Stop();
                 }
             }
         } 
@@ -108,7 +106,7 @@ namespace TFT_Overlay
 
         private void MenuItem_Click_About(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("TFT Information Overlay V" + CurrentVersion + " by J2GKaze/Jinsoku#4019\n\nDM me on Discord if you have any questions\n\nLast Updated: August 11th, 2019 @ 2:06AM PDT", "About");
+            MessageBox.Show("TFT Information Overlay V" + this.CurrentVersion + " by J2GKaze/Jinsoku#4019\n\nDM me on Discord if you have any questions\n\nLast Updated: August 11th, 2019 @ 2:06AM PDT", "About");
         }
 
         private void MenuItem_Click_Credits(object sender, RoutedEventArgs e)
@@ -118,12 +116,12 @@ namespace TFT_Overlay
 
         private void MenuItem_Click_Lock(object sender, RoutedEventArgs e)
         {
-            CanDrag = !CanDrag;
+            this.CanDrag = !this.CanDrag;
         }
 
         private void MenuItem_AutoUpdate(object sender, RoutedEventArgs e)
         {
-            string state = Settings.Default.AutoUpdate == true ? "OFF" : "ON";
+            string state = Settings.Default.AutoUpdate ? "OFF" : "ON";
 
             MessageBoxResult result = MessageBox.Show($"Would you like to turn {state} Auto-Update? This will restart the program.", "Auto-Updater", MessageBoxButton.OKCancel);
 
@@ -140,22 +138,22 @@ namespace TFT_Overlay
 
         private void MenuItem_Click_OnTop(object sender, RoutedEventArgs e)
         {
-            if (OnTop)
+            if (this.OnTop)
             {
                 this.Topmost = false;
-                OnTop = false;
+                this.OnTop = false;
             }
             else
             {
                 this.Topmost = true;
-                OnTop = true;
+                this.OnTop = true;
             }
         }
 
         private void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ((Control)sender).Cursor = LoLPointer;
-            if (CanDrag)
+            ((Control)sender).Cursor = this.LoLPointer;
+            if (this.CanDrag)
             {
                 this.DragMove();
             }
@@ -163,22 +161,22 @@ namespace TFT_Overlay
 
         private void MainWindow_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ((Control)sender).Cursor = LoLNormal;
+            ((Control)sender).Cursor = this.LoLNormal;
         }
 
         private void MainWindow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ((Control)sender).Cursor = LoLHover;
+            ((Control)sender).Cursor = this.LoLHover;
         }
 
         private void MainWindow_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ((Control)sender).Cursor = LoLNormal;
+            ((Control)sender).Cursor = this.LoLNormal;
         }
 
         private void AutoDim_Click(object sender, RoutedEventArgs e)
         {
-            string state = Settings.Default.AutoDim == true ? "OFF" : "ON";
+            string state = Settings.Default.AutoDim ? "OFF" : "ON";
 
             MessageBoxResult result = MessageBox.Show($"Would you like to turn {state} Auto-Dim? This will restart the program.", "Auto-Dim", MessageBoxButton.OKCancel);
 
@@ -197,13 +195,13 @@ namespace TFT_Overlay
         {
             while (true)
             {
-                if (IsLeagueOrOverlayActive())
+                if (this.IsLeagueOrOverlayActive())
                 {
-                    Dispatcher.BeginInvoke(new ThreadStart(() => App.Current.MainWindow.Opacity = 1));
+                    this.Dispatcher.BeginInvoke(new ThreadStart(() => App.Current.MainWindow.Opacity = 1));
                 }
-                else if (!IsLeagueOrOverlayActive())
+                else if (!this.IsLeagueOrOverlayActive())
                 {
-                    Dispatcher.BeginInvoke(new ThreadStart(() => App.Current.MainWindow.Opacity = .2));
+                    this.Dispatcher.BeginInvoke(new ThreadStart(() => App.Current.MainWindow.Opacity = .2));
                 }
 
                 Thread.Sleep(500);
@@ -224,11 +222,13 @@ namespace TFT_Overlay
         {
             try
             {
-                var resources = new ResourceDictionary();
+                ResourceDictionary resources = new ResourceDictionary
+                                               {
+                                                   Source = new Uri("pack://application:,,,/Resource/Localization/ItemStrings_" + locale + ".xaml", UriKind.Absolute)
+                                               };
 
-                resources.Source = new Uri("pack://application:,,,/Resource/Localization/ItemStrings_" + locale + ".xaml", UriKind.Absolute);
 
-                var current = Application.Current.Resources.MergedDictionaries.FirstOrDefault(
+                ResourceDictionary current = Application.Current.Resources.MergedDictionaries.FirstOrDefault(
                                  m => m.Source.OriginalString.EndsWith("ItemStrings_" + locale + ".xaml"));
 
                 if (current != null)
@@ -241,7 +241,7 @@ namespace TFT_Overlay
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                LoadStringResource("en-US");
+                this.LoadStringResource("en-US");
             }
         }
 
@@ -260,7 +260,7 @@ namespace TFT_Overlay
             if (sender is MenuItem menuItem)
             {
                 string tag = menuItem.Header.ToString();
-                LoadStringResource(tag);
+                this.LoadStringResource(tag);
 
                 Settings.FindAndUpdate("Language", tag);
             }
@@ -269,8 +269,8 @@ namespace TFT_Overlay
         private void ResetToDefault_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.Reset();
-            CanDrag = true;
-            LoadStringResource(Settings.Default.Language);
+            this.CanDrag = true;
+            this.LoadStringResource(Settings.Default.Language);
         }
 
         private void IconOpacityHandler_Click(object sender, RoutedEventArgs e)

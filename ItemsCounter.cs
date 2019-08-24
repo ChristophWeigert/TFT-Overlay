@@ -5,23 +5,23 @@ using System.Windows.Input;
 
 namespace TFT_Overlay
 {
-    public partial class ItemsCounter : UserControl
+    public class ItemsCounter : UserControl
     {
         private ICommand _upCommand;
         private ICommand _downCommand;
 
         #region Methods...
 
-        private void UpPoints() => Value += Step;
+        private void UpPoints() => this.Value += this.Step;
 
-        private void DownPoints() => Value -= Step;
+        private void DownPoints() => this.Value -= this.Step;
 
         #endregion
 
         #region Commands...
-        public ICommand UpCommand => _upCommand ?? (_upCommand = new DelegateCommand(() => UpPoints()));
+        public ICommand UpCommand => this._upCommand ?? (this._upCommand = new DelegateCommand(this.UpPoints));
 
-        public ICommand DownCommand => _downCommand ?? (_downCommand = new DelegateCommand(() => DownPoints()));
+        public ICommand DownCommand => this._downCommand ?? (this._downCommand = new DelegateCommand(this.DownPoints));
 
         #endregion
 
@@ -37,20 +37,20 @@ namespace TFT_Overlay
 
         public int Value
         {
-            get { return (int)GetValue(ValueProperty); }
+            get => (int)this.GetValue(ValueProperty);
             set
             {
-                if (value < MinValue)
-                    value = MinValue;
-                if (value > MaxValue)
-                    value = MaxValue;
-                SetValue(ValueProperty, value);
+                if (value < this.MinValue)
+                    value = this.MinValue;
+                if (value > this.MaxValue)
+                    value = this.MaxValue;
+                this.SetValue(ValueProperty, value);
             }
         }
         #endregion
 
         #region MinValueProperty
-        public readonly static DependencyProperty MinValueProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(int),
             typeof(ItemsCounter),
@@ -58,18 +58,18 @@ namespace TFT_Overlay
 
         public int MinValue
         {
-            get { return (int)GetValue(MinValueProperty); }
+            get => (int)this.GetValue(MinValueProperty);
             set
             {
-                if (value > MaxValue)
-                    MaxValue = value;
-                SetValue(MinValueProperty, value);
+                if (value > this.MaxValue)
+                    this.MaxValue = value;
+                this.SetValue(MinValueProperty, value);
             }
         }
         #endregion
 
         #region MaxValueProperty
-        public readonly static DependencyProperty MaxValueProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(int),
             typeof(ItemsCounter),
@@ -77,18 +77,18 @@ namespace TFT_Overlay
 
         public int MaxValue
         {
-            get { return (int)GetValue(MaxValueProperty); }
+            get => (int)this.GetValue(MaxValueProperty);
             set
             {
-                if (value < MinValue)
-                    value = MinValue;
-                SetValue(MaxValueProperty, value);
+                if (value < this.MinValue)
+                    value = this.MinValue;
+                this.SetValue(MaxValueProperty, value);
             }
         }
         #endregion
 
         #region StepProperty
-        public readonly static DependencyProperty StepProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty StepProperty = DependencyProperty.Register(
             "Step",
             typeof(int),
             typeof(ItemsCounter),
@@ -96,11 +96,8 @@ namespace TFT_Overlay
 
         public int Step
         {
-            get { return (int)GetValue(StepProperty); }
-            set
-            {
-                SetValue(StepProperty, value);
-            }
+            get => (int)this.GetValue(StepProperty);
+            set => this.SetValue(StepProperty, value);
         }
         #endregion
 
