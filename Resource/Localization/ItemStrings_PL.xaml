@@ -226,7 +226,7 @@
     <s:String x:Key="ClassOrigins_Assassin_Describe5" xml:space="preserve">(3) +350%</s:String>
     <s:String x:Key="ClassOrigins_Assassin_Describe6" xml:space="preserve">Obrażeń Krytycznych</s:String>
     <s:String x:Key="ClassOrigins_Assassin_Describe7" xml:space="preserve">(6)</s:String>
-    
+
     <!-- Blademaster -->
     <s:String x:Key="ClassOrigins_Blademaster" xml:space="preserve">Mistrz Miecza</s:String>
     <s:String x:Key="ClassOrigins_Blademaster_Describe1" xml:space="preserve">Mistrzowie Miecza mają 45% szans na wyprowadzenie</s:String>
@@ -310,7 +310,7 @@
     <s:String x:Key="ClassOrigins_Sorcerer_Describe8" xml:space="preserve">obrażeń magicznych.</s:String>
     <s:String x:Key="ClassOrigins_Sorcerer_Describe9" xml:space="preserve">(6)</s:String>
 
-      
+
     <!--/////////////////-->
     <!--Charts-->
     <!--&#10; = LineBreak-->

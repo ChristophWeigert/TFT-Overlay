@@ -366,5 +366,5 @@
 
     <!--Reset Button-->
     <s:String x:Key="ItemsBuilder_ResetButton" xml:space="preserve">Reset</s:String>
-    
+
 </ResourceDictionary>

@@ -14,14 +14,17 @@ namespace TFT_Overlay.Utilities
             {
                 return true;
             }
+
             return false;
         }
+
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null && value.Equals(true))
             {
                 return parameter;
             }
+
             return Binding.DoNothing;
         }
     }
@@ -33,9 +36,8 @@ namespace TFT_Overlay.Utilities
 
         public string RadioSelection
         {
-            get => (string)this.GetValue(RadioSelectionProperty);
+            get => (string) this.GetValue(RadioSelectionProperty);
             set => this.SetValue(RadioSelectionProperty, value);
         }
     }
-
 }

@@ -116,7 +116,7 @@
     <!--Zephyr-->
     <s:String x:Key="Zephyr" xml:space="preserve">西風匕首</s:String>
     <s:String x:Key="Zephyr1" xml:space="preserve">&#10;在戰鬥開始時，放逐對方一個單位5秒。</s:String>
-    
+
     <!--/////////////////-->
     <!--ClassOrigins Descriptions-->
     <!--&#10; = LineBreak-->

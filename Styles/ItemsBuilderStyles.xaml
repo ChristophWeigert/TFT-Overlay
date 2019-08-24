@@ -7,15 +7,17 @@
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="BorderBrush">
             <Setter.Value>
-                <SolidColorBrush Color="LightGoldenrodYellow"/>
+                <SolidColorBrush Color="LightGoldenrodYellow" />
             </Setter.Value>
         </Setter>
-        <Setter Property="Opacity" Value="{Binding Source={x:Static p:Settings.Default}, Path=IconOpacity}"/>
+        <Setter Property="Opacity" Value="{Binding Source={x:Static p:Settings.Default}, Path=IconOpacity}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0.8" CornerRadius="3" Background="Transparent">
-                        <TextBlock Foreground="{TemplateBinding BorderBrush}" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0.8" CornerRadius="3"
+                            Background="Transparent">
+                        <TextBlock Foreground="{TemplateBinding BorderBrush}" Text="{TemplateBinding Content}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -23,31 +25,33 @@
     </Style>
 
     <Style x:Key="CounterStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="24"/>
-        <Setter Property="Opacity" Value="{Binding Source={x:Static p:Settings.Default}, Path=IconOpacity}"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="LightGoldenrodYellow"/>
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Opacity" Value="{Binding Source={x:Static p:Settings.Default}, Path=IconOpacity}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="LightGoldenrodYellow" />
     </Style>
 
 
     <Style x:Key="ImageStyle" TargetType="Image">
-        <Setter Property="Opacity" Value="{Binding Source={x:Static p:Settings.Default}, Path=IconOpacity}"/>
+        <Setter Property="Opacity" Value="{Binding Source={x:Static p:Settings.Default}, Path=IconOpacity}" />
     </Style>
 
     <Style x:Key="ButtonBorder" TargetType="{x:Type Border}">
         <Style.Triggers>
-            <DataTrigger Binding="{Binding 
+            <DataTrigger
+                Binding="{Binding 
                 RelativeSource={RelativeSource Self}, 
-                Path=(utilities:AttachedControls.RelatedControl).Opacity}" Value="1">
+                Path=(utilities:AttachedControls.RelatedControl).Opacity}"
+                Value="1">
                 <Setter Property="BorderBrush">
                     <Setter.Value>
-                        <SolidColorBrush Color="LightGoldenrodYellow"/>
+                        <SolidColorBrush Color="LightGoldenrodYellow" />
                     </Setter.Value>
                 </Setter>
-                <Setter Property="BorderThickness" Value="3"/>
-                <Setter Property="CornerRadius" Value="3"/>
-                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="3" />
+                <Setter Property="CornerRadius" Value="3" />
+                <Setter Property="Background" Value="Transparent" />
             </DataTrigger>
         </Style.Triggers>
     </Style>

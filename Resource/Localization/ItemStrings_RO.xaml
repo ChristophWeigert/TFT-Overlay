@@ -311,5 +311,5 @@
     <s:String x:Key="ClassOrigins_Sorcerer_Describe7" xml:space="preserve">(3) +100%</s:String>
     <s:String x:Key="ClassOrigins_Sorcerer_Describe8" xml:space="preserve">daune de la speluri.</s:String>
     <s:String x:Key="ClassOrigins_Sorcerer_Describe9" xml:space="preserve">(6)</s:String>
-    
+
 </ResourceDictionary>

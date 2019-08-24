@@ -9,17 +9,21 @@ namespace TFT_Overlay.Utilities
         #region Methods...
 
         #region SetRelatedControl
+
         public static void SetRelatedControl(DependencyObject element, UIElement value)
         {
             element.SetValue(RelatedControlProperty, value);
         }
+
         #endregion
 
         #region GetRelatedControl
+
         public static UIElement GetRelatedControl(DependencyObject element)
         {
-            return (UIElement)element.GetValue(RelatedControlProperty);
+            return (UIElement) element.GetValue(RelatedControlProperty);
         }
+
         #endregion
 
         #endregion

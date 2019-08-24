@@ -11,14 +11,14 @@
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:TFT_Overlay.ViewModel" />
             <FontFamily x:Key="Cabin">pack://application:,,,/ReferencedAssembly;component/Font/Cabin.ttf</FontFamily>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles\ItemsBuilderStyles.xaml"/>
-                <ResourceDictionary Source="Styles\MainWindowStyles.xaml"/>
-                <ResourceDictionary Source="Resource\Items.xaml"/>
-                <ResourceDictionary Source="Resource\ItemsBuilder.xaml"/>
-                <ResourceDictionary Source="Resource\ItemsTextless.xaml"/>
-                <ResourceDictionary Source="Resource\Localization\ItemStrings.xaml"/>
-                <ResourceDictionary Source="Resource\Charts.xaml"/>
-                <ResourceDictionary Source="Resource\ClassOrigins.xaml"/>
+                <ResourceDictionary Source="Styles\ItemsBuilderStyles.xaml" />
+                <ResourceDictionary Source="Styles\MainWindowStyles.xaml" />
+                <ResourceDictionary Source="Resource\Items.xaml" />
+                <ResourceDictionary Source="Resource\ItemsBuilder.xaml" />
+                <ResourceDictionary Source="Resource\ItemsTextless.xaml" />
+                <ResourceDictionary Source="Resource\Localization\ItemStrings.xaml" />
+                <ResourceDictionary Source="Resource\Charts.xaml" />
+                <ResourceDictionary Source="Resource\ClassOrigins.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

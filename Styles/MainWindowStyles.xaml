@@ -2,27 +2,30 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:TFT_Overlay">
 
-    <Style TargetType="l:OptionalRadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" >
-        <Setter Property="IsChecked" Value="False"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="1 2 1 0"/>
+    <Style TargetType="l:OptionalRadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+        <Setter Property="IsChecked" Value="False" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1 2 1 0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Grid x:Name="Chrome" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="Transparent"/>
-                            <Setter Property="Cursor" Value="{DynamicResource LoLPointer}"/>
+                            <Setter Property="Foreground" Value="Transparent" />
+                            <Setter Property="Cursor" Value="{DynamicResource LoLPointer}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Transparent" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -30,8 +33,8 @@
         </Setter>
         <Style.Triggers>
             <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Value="true">
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -45,7 +48,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border  BorderThickness="1" BorderBrush="Black" Background="#09CAE5" Height="10" Width="Auto"/>
+                    <Border BorderThickness="1" BorderBrush="Black" Background="#09CAE5" Height="10" Width="Auto" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -57,7 +60,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border SnapsToDevicePixels="True" Background="#C8AA6D"  BorderThickness="1" BorderBrush="#C8AA6D" Height="10" Width="Auto"/>
+                    <Border SnapsToDevicePixels="True" Background="#C8AA6D" BorderThickness="1" BorderBrush="#C8AA6D"
+                            Height="10" Width="Auto" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -65,13 +69,13 @@
 
     <Style x:Key="SliderThumb" TargetType="Thumb">
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Cursor" Value="{DynamicResource LoLHover}"/>
+        <Setter Property="Cursor" Value="{DynamicResource LoLHover}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
                     <Rectangle Height="20" Width="20">
                         <Rectangle.Fill>
-                            <ImageBrush ImageSource="../Images/riversprite.png"></ImageBrush>
+                            <ImageBrush ImageSource="../Images/riversprite.png" />
                         </Rectangle.Fill>
                     </Rectangle>
                 </ControlTemplate>
@@ -86,12 +90,12 @@
                 <ColumnDefinition Width="Auto" MinWidth="{TemplateBinding MinWidth}" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Track Grid.Column="1" x:Name="PART_Track"   >
+            <Track Grid.Column="1" x:Name="PART_Track">
                 <Track.DecreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource SliderRepeatButton1}"  Command="Slider.DecreaseLarge" />
+                    <RepeatButton Style="{StaticResource SliderRepeatButton1}" Command="Slider.DecreaseLarge" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb Style="{StaticResource SliderThumb}"  />
+                    <Thumb Style="{StaticResource SliderThumb}" />
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
                     <RepeatButton Style="{StaticResource SliderRepeatButton}" Command="Slider.IncreaseLarge" />
@@ -101,7 +105,7 @@
     </ControlTemplate>
 
     <Style x:Key="Custom_Slider" TargetType="Slider">
-        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Style.Triggers>
@@ -115,34 +119,41 @@
 
     <!--Resize Style-->
     <Style TargetType="{x:Type ResizeGrip}">
-        <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
-        <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
+        <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ResizeGrip}">
-                    <Grid SnapsToDevicePixels="True" Background="{TemplateBinding Background}">
-                    </Grid>
+                    <Grid SnapsToDevicePixels="True" Background="{TemplateBinding Background}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Visibility" Value="Hidden"/>
+        <Setter Property="Visibility" Value="Hidden" />
     </Style>
 
-    <SolidColorBrush x:Key="ResizeGripperForeground" Color="#B8B4A2"/>
+    <SolidColorBrush x:Key="ResizeGripperForeground" Color="#B8B4A2" />
 
     <Style x:Key="VisibleResizeGrip" TargetType="{x:Type ResizeGrip}">
-        <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
-        <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
-        <Setter Property="Background" Value="Black"/>
+        <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" />
+        <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}" />
+        <Setter Property="Background" Value="Black" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ResizeGrip}">
                     <Grid SnapsToDevicePixels="True" Background="{TemplateBinding Background}" Width="15" Height="15">
-                        <Path Fill="White" HorizontalAlignment="Right" Margin="0,0,2,2" VerticalAlignment="Bottom" Data="M 8,0 L 10,0 L 10,2 L 8,2 Z M 4,4 L 6,4 L 6,6 L 4,6 Z M 8,4 L 10,4 L 10,6 L 8,6 Z M 0,8 L 2,8 L 2,10 L 0,10 Z M 4,8 L 6,8 L 6,10 L 4,10 Z M 8,8 L 10,8 L 10,10 L 8,10 Z"/>
-                        <Path Fill="{StaticResource ResizeGripperForeground}" HorizontalAlignment="Right" Margin="0,0,3,3" VerticalAlignment="Bottom" Data="M 8,0 L 10,0 L 10,2 L 8,2 Z M 4,4 L 6,4 L 6,6 L 4,6 Z M 8,4 L 10,4 L 10,6 L 8,6 Z M 0,8 L 2,8 L 2,10 L 0,10 Z M 4,8 L 6,8 L 6,10 L 4,10 Z M 8,8 L 10,8 L 10,10 L 8,10 Z"/>
-                        <Path Data="M8,0L10,0 10,2 8,2z M4,4L6,4 6,6 4,6z M8,4L10,4 10,6 8,6z M0,8L2,8 2,10 0,10z M4,8L6,8 6,10 4,10z M8,8L10,8 10,10 8,10z" Fill="White" HorizontalAlignment="Right" Margin="0,0,2,2" VerticalAlignment="Bottom" />
-                        <Path Data="M8,0L10,0 10,2 8,2z M4,4L6,4 6,6 4,6z M8,4L10,4 10,6 8,6z M0,8L2,8 2,10 0,10z M4,8L6,8 6,10 4,10z M8,8L10,8 10,10 8,10z" Fill="{StaticResource ResizeGripperForeground}" HorizontalAlignment="Right" Margin="0,0,3,3" VerticalAlignment="Bottom" />
+                        <Path Fill="White" HorizontalAlignment="Right" Margin="0,0,2,2" VerticalAlignment="Bottom"
+                              Data="M 8,0 L 10,0 L 10,2 L 8,2 Z M 4,4 L 6,4 L 6,6 L 4,6 Z M 8,4 L 10,4 L 10,6 L 8,6 Z M 0,8 L 2,8 L 2,10 L 0,10 Z M 4,8 L 6,8 L 6,10 L 4,10 Z M 8,8 L 10,8 L 10,10 L 8,10 Z" />
+                        <Path Fill="{StaticResource ResizeGripperForeground}" HorizontalAlignment="Right"
+                              Margin="0,0,3,3" VerticalAlignment="Bottom"
+                              Data="M 8,0 L 10,0 L 10,2 L 8,2 Z M 4,4 L 6,4 L 6,6 L 4,6 Z M 8,4 L 10,4 L 10,6 L 8,6 Z M 0,8 L 2,8 L 2,10 L 0,10 Z M 4,8 L 6,8 L 6,10 L 4,10 Z M 8,8 L 10,8 L 10,10 L 8,10 Z" />
+                        <Path
+                            Data="M8,0L10,0 10,2 8,2z M4,4L6,4 6,6 4,6z M8,4L10,4 10,6 8,6z M0,8L2,8 2,10 0,10z M4,8L6,8 6,10 4,10z M8,8L10,8 10,10 8,10z"
+                            Fill="White" HorizontalAlignment="Right" Margin="0,0,2,2" VerticalAlignment="Bottom" />
+                        <Path
+                            Data="M8,0L10,0 10,2 8,2z M4,4L6,4 6,6 4,6z M8,4L10,4 10,6 8,6z M0,8L2,8 2,10 0,10z M4,8L6,8 6,10 4,10z M8,8L10,8 10,10 8,10z"
+                            Fill="{StaticResource ResizeGripperForeground}" HorizontalAlignment="Right"
+                            Margin="0,0,3,3" VerticalAlignment="Bottom" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -151,67 +162,72 @@
 
     <!--Tab Design-->
     <Style x:Key="Tabstyle"
-               TargetType="{x:Type TabItem}">
+           TargetType="{x:Type TabItem}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Border x:Name="Spacer"
+                            Width="Auto"
+                            Height="25"
+                            Padding="5 0 5 0"
+                            Margin="0 0 0 0"
+                            BorderBrush="Transparent"
+                            CornerRadius="0,0,0,0"
+                            BorderThickness="0">
+                        <Border x:Name="Border"
+                                MinWidth="60"
                                 Width="Auto"
                                 Height="25"
+                                Background="#1e2328"
+                                BorderBrush="#c8aa6d"
+                                BorderThickness="2,2,2,2"
+                                CornerRadius="5,5,5,5"
                                 Padding="5 0 5 0"
-                                Margin="0 0 0 0"
-                                BorderBrush="Transparent"
-                                CornerRadius="0,0,0,0"
-                                BorderThickness="0">
-                        <Border x:Name="Border"
-                                    MinWidth="60"
-                                    Width="Auto"
-                                    Height="25"
-                                    Background="#1e2328"
-                                    BorderBrush="#c8aa6d"
-                                    BorderThickness="2,2,2,2"
-                                    CornerRadius="5,5,5,5"
-                                    Padding="5 0 5 0"
-                                    VerticalAlignment="Center">
+                                VerticalAlignment="Center">
                             <ContentPresenter x:Name="ContentSite"
-                                                  TextElement.FontSize="12"
-                                                  TextElement.FontFamily="{DynamicResource Cabin}"
-                                                  TextElement.Foreground="#cdbe91"
-                                                  VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"
-                                                  ContentSource="Header"
-                                                  Width="Auto"
-                                                  Height="Auto" />
+                                              TextElement.FontSize="12"
+                                              TextElement.FontFamily="{DynamicResource Cabin}"
+                                              TextElement.Foreground="#cdbe91"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"
+                                              ContentSource="Header"
+                                              Width="Auto"
+                                              Height="Auto" />
                         </Border>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--BF-->
     <Style x:Key="StyleBF" TargetType="{x:Type l:OptionalRadioButton}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="BF_Image" Source="pack://application:,,,/Images/cstyle/BFPM.png" Width="48" Height="48"/>
+                            <Image x:Name="BF_Image" Source="pack://application:,,,/Images/cstyle/BFPM.png" Width="48"
+                                   Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="BF_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BFMB.png"/>
+                            <Setter TargetName="BF_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BFMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="BF_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BFPB.png"/>
+                            <Setter TargetName="BF_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BFPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="BF_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BFAB.png"/>
+                            <Setter TargetName="BF_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BFAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -223,24 +239,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Bow_Image" Source="pack://application:,,,/Images/cstyle/BowPM.png" Width="48" Height="48"/>
+                            <Image x:Name="Bow_Image" Source="pack://application:,,,/Images/cstyle/BowPM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Bow_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BowMB.png"/>
+                            <Setter TargetName="Bow_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BowMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Bow_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BowPB.png"/>
+                            <Setter TargetName="Bow_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BowPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Bow_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BowAB.png"/>
+                            <Setter TargetName="Bow_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BowAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -252,24 +273,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Rod_Image" Source="pack://application:,,,/Images/cstyle/RodPM.png" Width="48" Height="48"/>
+                            <Image x:Name="Rod_Image" Source="pack://application:,,,/Images/cstyle/RodPM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Rod_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/RodMB.png"/>
+                            <Setter TargetName="Rod_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/RodMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Rod_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/RodPB.png"/>
+                            <Setter TargetName="Rod_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/RodPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Rod_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/RodAB.png"/>
+                            <Setter TargetName="Rod_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/RodAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -281,24 +307,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Tear_Image" Source="pack://application:,,,/Images/cstyle/TearPM.png" Width="48" Height="48"/>
+                            <Image x:Name="Tear_Image" Source="pack://application:,,,/Images/cstyle/TearPM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Tear_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/TearMB.png"/>
+                            <Setter TargetName="Tear_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/TearMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Tear_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/TearPB.png"/>
+                            <Setter TargetName="Tear_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/TearPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Tear_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/TearAB.png"/>
+                            <Setter TargetName="Tear_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/TearAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -310,24 +341,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Vest_Image" Source="pack://application:,,,/Images/cstyle/VestPM.png" Width="48" Height="48"/>
+                            <Image x:Name="Vest_Image" Source="pack://application:,,,/Images/cstyle/VestPM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Vest_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/VestMB.png"/>
+                            <Setter TargetName="Vest_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/VestMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Vest_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/VestPB.png"/>
+                            <Setter TargetName="Vest_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/VestPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Vest_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/VestAB.png"/>
+                            <Setter TargetName="Vest_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/VestAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -339,24 +375,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Cape_Image" Source="pack://application:,,,/Images/cstyle/CapePM.png" Width="48" Height="48"/>
+                            <Image x:Name="Cape_Image" Source="pack://application:,,,/Images/cstyle/CapePM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Cape_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/CapeMB.png"/>
+                            <Setter TargetName="Cape_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/CapeMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Cape_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/CapePB.png"/>
+                            <Setter TargetName="Cape_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/CapePB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Cape_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/CapeAB.png"/>
+                            <Setter TargetName="Cape_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/CapeAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -368,24 +409,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Belt_Image" Source="pack://application:,,,/Images/cstyle/BeltPM.png" Width="48" Height="48"/>
+                            <Image x:Name="Belt_Image" Source="pack://application:,,,/Images/cstyle/BeltPM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Belt_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BeltMB.png"/>
+                            <Setter TargetName="Belt_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BeltMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Belt_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BeltPB.png"/>
+                            <Setter TargetName="Belt_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BeltPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Belt_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/BeltAB.png"/>
+                            <Setter TargetName="Belt_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/BeltAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -397,24 +443,29 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:OptionalRadioButton}">
-                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent" CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
+                    <Border Width="Auto" Height="Auto" Padding="0 0 0 0" Margin="0 0 0 0" BorderBrush="Transparent"
+                            CornerRadius="20 20 20 20" BorderThickness="0" Background="Transparent">
                         <Border>
-                            <Image x:Name="Spatula_Image" Source="pack://application:,,,/Images/cstyle/SpatulaPM.png" Width="48" Height="48"/>
+                            <Image x:Name="Spatula_Image" Source="pack://application:,,,/Images/cstyle/SpatulaPM.png"
+                                   Width="48" Height="48" />
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Spatula_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/SpatulaMB.png"/>
+                            <Setter TargetName="Spatula_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/SpatulaMB.png" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Spatula_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/SpatulaPB.png"/>
+                            <Setter TargetName="Spatula_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/SpatulaPB.png" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="True"/>
-                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Spatula_Image" Property="Source" Value="pack://application:,,,/Images/cstyle/SpatulaAB.png"/>
+                            <Setter TargetName="Spatula_Image" Property="Source"
+                                    Value="pack://application:,,,/Images/cstyle/SpatulaAB.png" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

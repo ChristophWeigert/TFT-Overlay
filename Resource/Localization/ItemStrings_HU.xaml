@@ -322,24 +322,24 @@
     <!--Tier Roll Chance + Pool Size-->
     <s:String x:Key="Charts_Title" xml:space="preserve">Tier Roll Chance + Pool Size</s:String>
 
-  
+
     <!--/////////////////-->
     <!--MainWindow.xaml-->
     <!--&#10; = LineBreak-->
     <!--/////////////////-->
-  
+
     <!--Head MAIN-->
     <s:String x:Key="MainWindow_Main" xml:space="preserve">FŐMENÜ</s:String>
-  
+
     <!--Head ITEM BUILDER-->
     <s:String x:Key="MainWindow_ItemBuilder" xml:space="preserve">TÁRGY ÉPÍTŐ</s:String>
-    
+
     <!--ToolTip Opacity-->
     <s:String x:Key="MainWindow_ToolTip_Opacity" xml:space="preserve">Átlátszóság</s:String>
-  
+
     <!--ToolTip options-->
     <s:String x:Key="MainWindow_ToolTip_Options" xml:space="preserve">Jobb kattintás a menühöz és bal tartás az ablak mozgatásához. </s:String>
-  
+
     <!--Options-->
     <s:String x:Key="MainWindow_Options_Preferences" xml:space="preserve">Beállítások</s:String>
     <s:String x:Key="MainWindow_Options_Preferences_Lock" xml:space="preserve">Zárolás</s:String>
@@ -365,5 +365,5 @@
 
     <!--Reset Button-->
     <s:String x:Key="ItemsBuilder_ResetButton" xml:space="preserve">Visszaállítás</s:String>
-    
+
 </ResourceDictionary>

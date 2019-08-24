@@ -1,4 +1,8 @@
-﻿namespace TFT_Overlay.Properties
+﻿using System;
+using System.ComponentModel;
+using System.Configuration;
+
+namespace TFT_Overlay.Properties
 {
     // This class allows you to handle specific events on the settings class:
     //  The SettingChanging event is raised before a setting's value is changed.
@@ -14,18 +18,18 @@
                 Default[key] = value;
                 Default.Save();
             }
-            catch (System.Configuration.SettingsPropertyNotFoundException ex)
+            catch (SettingsPropertyNotFoundException ex)
             {
-                System.Console.WriteLine(ex);
+                Console.WriteLine(ex);
             }
         }
 
-        private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e)
+        private void SettingChangingEventHandler(object sender, SettingChangingEventArgs e)
         {
             // Add code to handle the SettingChangingEvent event here.
         }
 
-        private void SettingsSavingEventHandler(object sender, System.ComponentModel.CancelEventArgs e)
+        private void SettingsSavingEventHandler(object sender, CancelEventArgs e)
         {
             // Add code to handle the SettingsSaving event here.
         }

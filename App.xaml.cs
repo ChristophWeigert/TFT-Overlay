@@ -22,7 +22,8 @@ namespace TFT_Overlay
                     string version = htmlCode.Substring(versionFind + 32, 5);
                     if (currentVersion != version && Settings.Default.AutoUpdate)
                     {
-                        MessageBoxResult result = MessageBox.Show($"A new update is available.\nWould you like to download V{version}?", "TFT Overlay Update Available", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        MessageBoxResult result = MessageBox.Show($"A new update is available.\nWould you like to download V{version}?", "TFT Overlay Update Available", MessageBoxButton.YesNo,
+                            MessageBoxImage.Question);
 
                         if (result == MessageBoxResult.Yes)
                         {
@@ -31,7 +32,8 @@ namespace TFT_Overlay
                             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                             client.DownloadFile(new Uri(link), "TFTOverlay.zip");
 
-                            MessageBoxResult res = MessageBox.Show("The zip file was downloaded to your local directory, please extract and use the updated version instead.\nDo you want to open your local directory?",
+                            MessageBoxResult res = MessageBox.Show(
+                                "The zip file was downloaded to your local directory, please extract and use the updated version instead.\nDo you want to open your local directory?",
                                 "Success", MessageBoxButton.YesNo, MessageBoxImage.Information);
                             if (res == MessageBoxResult.Yes)
                             {

@@ -6,469 +6,562 @@
     <!--Origins-->
     <DataTemplate x:Key="Origins" DataType="{x:Type vm:MainViewModel}">
         <WrapPanel Orientation="Horizontal">
-            <Grid >
+            <Grid>
                 <Grid.Background>
-                    <SolidColorBrush Color="Black" Opacity="{Binding ElementName=OpacitySlider,Path=Value}"></SolidColorBrush>
+                    <SolidColorBrush Color="Black" Opacity="{Binding ElementName=OpacitySlider,Path=Value}" />
                 </Grid.Background>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
 
                 <!--Border-->
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 1 0 1" Grid.Row="0" Grid.ColumnSpan="9"/>
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="2" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="4" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="6" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="8" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="10" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="12" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="14" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="16" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="18" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="20" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="22" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="24" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="26" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 1 0 1" Grid.Row="0" Grid.ColumnSpan="9" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="2" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="4" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="6" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="8" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="10" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="12" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="14" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="16" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="18" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="20" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="22" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="24" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="26" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Origins}" 
-                                               FontSize="16" 
-                                               VerticalAlignment="Center" 
-                                               HorizontalAlignment="Center" 
-                                               Foreground="LightGoldenrodYellow" 
-                                               Grid.Row="0"
-                                               Grid.ColumnSpan="8"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Origins}"
+                           FontSize="16"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="LightGoldenrodYellow"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="8" />
                 <!-- Demons -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Demons}" Grid.Row="1" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Demons}" Grid.Row="1" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="1"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow" 
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Demons_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Demons_Describe2}" Foreground="DeepSkyBlue"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Demons_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Demons_Describe4}" Foreground="White"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Demons_Describe5}"></Run>
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Demons_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Demons_Describe2}" Foreground="DeepSkyBlue" />
+                    <Run Text="{DynamicResource ClassOrigins_Demons_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Demons_Describe4}" Foreground="White" />
+                    <Run Text="{DynamicResource ClassOrigins_Demons_Describe5}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/demon.jpg" Grid.Row="2" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/demon.jpg" Grid.Row="2" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Varus-Icon.png" Grid.Row="2" Grid.Column="2" ></Image>
-                <TextBlock Text="2" Grid.Row="2" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Varus-Icon.png" Grid.Row="2" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="2" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Elise-Icon.png" Grid.Row="2" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Elise-Icon.png" Grid.Row="2" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Morgana-Icon.png" Grid.Row="2" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Morgana-Icon.png" Grid.Row="2" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Evelynn-Icon.png" Grid.Row="2" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="2" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Evelynn-Icon.png" Grid.Row="2" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="2" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Aatrox-Icon.png" Grid.Row="2" Grid.Column="5"></Image>
-                <TextBlock Text="3" Grid.Row="2" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Aatrox-Icon.png" Grid.Row="2" Grid.Column="5" />
+                <TextBlock Text="3" Grid.Row="2" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Brand-Icon.png" Grid.Row="2" Grid.Column="6"></Image>
-                <TextBlock Text="4" Grid.Row="2" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Brand-Icon.png" Grid.Row="2" Grid.Column="6" />
+                <TextBlock Text="4" Grid.Row="2" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Swain-Icon.png" Grid.Row="2" Grid.Column="7"></Image>
-                <TextBlock Text="5" Grid.Row="2" Grid.Column="7" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Swain-Icon.png" Grid.Row="2" Grid.Column="7" />
+                <TextBlock Text="5" Grid.Row="2" Grid.Column="7" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Dragon -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Dragon}" Grid.Row="3" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Dragon}" Grid.Row="3" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="3"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Dragon_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Dragon_Describe2}" Foreground="MediumPurple"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Dragon_Describe3}"></Run>
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Dragon_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Dragon_Describe2}" Foreground="MediumPurple" />
+                    <Run Text="{DynamicResource ClassOrigins_Dragon_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/dragon.jpg" Grid.Row="4" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/dragon.jpg" Grid.Row="4" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Shyvana-Icon.png" Grid.Row="4" Grid.Column="1"></Image>
-                <TextBlock Text="3" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Shyvana-Icon.png" Grid.Row="4" Grid.Column="1" />
+                <TextBlock Text="3" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/AurelionSol-Icon.png" Grid.Row="4" Grid.Column="2"></Image>
-                <TextBlock Text="4" Grid.Row="4" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/AurelionSol-Icon.png" Grid.Row="4" Grid.Column="2" />
+                <TextBlock Text="4" Grid.Row="4" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Exile -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Exile}" Grid.Row="5" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Exile}" Grid.Row="5" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="5"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Exile_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Exile_Describe2}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Exile_Describe3}"></Run>
+                           Grid.Row="5"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Exile_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Exile_Describe2}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Exile_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/exile.jpg" Grid.Row="6" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/exile.jpg" Grid.Row="6" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Yasuo-Icon.png" Grid.Row="6" Grid.Column="1"></Image>
-                <TextBlock Text="5" Grid.Row="6" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Yasuo-Icon.png" Grid.Row="6" Grid.Column="1" />
+                <TextBlock Text="5" Grid.Row="6" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Glacial -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Glacial}" Grid.Row="7" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Glacial}" Grid.Row="7" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="7"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Glacial_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Glacial_Describe2}" Foreground="Yellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Glacial_Describe3}"></Run>
+                           Grid.Row="7"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Glacial_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Glacial_Describe2}" Foreground="Yellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Glacial_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/glacial.jpg" Grid.Row="8" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/glacial.jpg" Grid.Row="8" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Braum-Icon.png" Grid.Row="8" Grid.Column="1"></Image>
-                <TextBlock Text="2" Grid.Row="8" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Braum-Icon.png" Grid.Row="8" Grid.Column="1" />
+                <TextBlock Text="2" Grid.Row="8" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Lissandra-Icon.png" Grid.Row="8" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="8" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Lissandra-Icon.png" Grid.Row="8" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="8" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Ashe-Icon.png" Grid.Row="8" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="8" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Ashe-Icon.png" Grid.Row="8" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="8" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Volibear-Icon.png" Grid.Row="8" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="8" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Volibear-Icon.png" Grid.Row="8" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="8" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Sejuani-Icon.png" Grid.Row="8" Grid.Column="5"></Image>
-                <TextBlock Text="4" Grid.Row="8" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Sejuani-Icon.png" Grid.Row="8" Grid.Column="5" />
+                <TextBlock Text="4" Grid.Row="8" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Anivia-Icon.png" Grid.Row="8" Grid.Column="6"></Image>
-                <TextBlock Text="5" Grid.Row="8" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Anivia-Icon.png" Grid.Row="8" Grid.Column="6" />
+                <TextBlock Text="5" Grid.Row="8" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Imperial -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Imperial}" Grid.Row="9" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Imperial}" Grid.Row="9" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="9"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Imperial_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Imperial_Describe2}" Foreground="Red"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Imperial_Describe3}"></Run>
+                           Grid.Row="9"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Imperial_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Imperial_Describe2}" Foreground="Red" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Imperial_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/imperial.jpg" Grid.Row="10" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/imperial.jpg" Grid.Row="10" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Darius-Icon.png" Grid.Row="10" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="10" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Darius-Icon.png" Grid.Row="10" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="10" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Katarina-Icon.png" Grid.Row="10" Grid.Column="2"></Image>
-                <TextBlock Text="3" Grid.Row="10" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Katarina-Icon.png" Grid.Row="10" Grid.Column="2" />
+                <TextBlock Text="3" Grid.Row="10" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Draven-Icon.png" Grid.Row="10" Grid.Column="3"></Image>
-                <TextBlock Text="4" Grid.Row="10" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Draven-Icon.png" Grid.Row="10" Grid.Column="3" />
+                <TextBlock Text="4" Grid.Row="10" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Swain-Icon.png" Grid.Row="10" Grid.Column="4"></Image>
-                <TextBlock Text="5" Grid.Row="10" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Swain-Icon.png" Grid.Row="10" Grid.Column="4" />
+                <TextBlock Text="5" Grid.Row="10" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Noble -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Noble}" Grid.Row="11" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Noble}" Grid.Row="11" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="11"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Noble_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Noble_Describe2}" Foreground="Yellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Noble_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Noble_Describe4}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Noble_Describe5}"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Noble_Describe6}"></Run>
+                           Grid.Row="11"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Noble_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Noble_Describe2}" Foreground="Yellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Noble_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Noble_Describe4}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Noble_Describe5}" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Noble_Describe6}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/noble.jpg" Grid.Row="12" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/noble.jpg" Grid.Row="12" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Fiora-Icon.png" Grid.Row="12" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="12" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Fiora-Icon.png" Grid.Row="12" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="12" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Garen-Icon.png" Grid.Row="12" Grid.Column="2"></Image>
-                <TextBlock Text="1" Grid.Row="12" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Garen-Icon.png" Grid.Row="12" Grid.Column="2" />
+                <TextBlock Text="1" Grid.Row="12" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Vayne-Icon.png" Grid.Row="12" Grid.Column="3"></Image>
-                <TextBlock Text="1" Grid.Row="12" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Vayne-Icon.png" Grid.Row="12" Grid.Column="3" />
+                <TextBlock Text="1" Grid.Row="12" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Lucian-Icon.png" Grid.Row="12" Grid.Column="4"></Image>
-                <TextBlock Text="2" Grid.Row="12" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Lucian-Icon.png" Grid.Row="12" Grid.Column="4" />
+                <TextBlock Text="2" Grid.Row="12" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Leona-Icon.png" Grid.Row="12" Grid.Column="5"></Image>
-                <TextBlock Text="4" Grid.Row="12" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Leona-Icon.png" Grid.Row="12" Grid.Column="5" />
+                <TextBlock Text="4" Grid.Row="12" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kayle-Icon.png" Grid.Row="12" Grid.Column="6"></Image>
-                <TextBlock Text="5" Grid.Row="12" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kayle-Icon.png" Grid.Row="12" Grid.Column="6" />
+                <TextBlock Text="5" Grid.Row="12" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Ninja -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Ninja}" Grid.Row="13" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Ninja}" Grid.Row="13" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="13"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe2}" Foreground="Red"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe4}" Foreground="Red"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe5}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe6}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ninja_Describe7}" Foreground="Red"></Run>
+                           Grid.Row="13"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe2}" Foreground="Red" />
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe4}" Foreground="Red" />
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe5}" />
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe6}" />
+                    <Run Text="{DynamicResource ClassOrigins_Ninja_Describe7}" Foreground="Red" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/ninja.jpg" Grid.Row="14" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/ninja.jpg" Grid.Row="14" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Shen-Icon.png" Grid.Row="14" Grid.Column="1"></Image>
-                <TextBlock Text="2" Grid.Row="14" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Shen-Icon.png" Grid.Row="14" Grid.Column="1" />
+                <TextBlock Text="2" Grid.Row="14" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Zed-Icon.png" Grid.Row="14" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="14" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Zed-Icon.png" Grid.Row="14" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="14" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kennen-Icon.png" Grid.Row="14" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="14" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kennen-Icon.png" Grid.Row="14" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="14" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Akali-Icon.png" Grid.Row="14" Grid.Column="4"></Image>
-                <TextBlock Text="4" Grid.Row="14" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Akali-Icon.png" Grid.Row="14" Grid.Column="4" />
+                <TextBlock Text="4" Grid.Row="14" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Pirate -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Pirate}" Grid.Row="15" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Pirate}" Grid.Row="15" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="15"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Pirate_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Pirate_Describe2}" Foreground="LightYellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Pirate_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Pirate_Describe4}" FontWeight="Bold"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Pirate_Describe5}"></Run>
+                           Grid.Row="15"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Pirate_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Pirate_Describe2}" Foreground="LightYellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Pirate_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Pirate_Describe4}" FontWeight="Bold" />
+                    <Run Text="{DynamicResource ClassOrigins_Pirate_Describe5}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/pirate.jpg" Grid.Row="16" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/pirate.jpg" Grid.Row="16" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Graves-Icon.png" Grid.Row="16" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="16" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
-                
-                <Image Source="pack://application:,,,/Images/champs/TwistedFate-Icon.png" Grid.Row="16" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="16" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
-                
-                <Image Source="pack://application:,,,/Images/champs/Pyke-Icon.png" Grid.Row="16" Grid.Column="3"></Image>
-                <TextBlock Text="2" Grid.Row="16" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Graves-Icon.png" Grid.Row="16" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="16" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Gangplank-Icon.png" Grid.Row="16" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="16" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/TwistedFate-Icon.png" Grid.Row="16" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="16" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/MissFortune-Icon.png" Grid.Row="16" Grid.Column="5"></Image>
-                <TextBlock Text="5" Grid.Row="16" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Pyke-Icon.png" Grid.Row="16" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="16" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
+
+                <Image Source="pack://application:,,,/Images/champs/Gangplank-Icon.png" Grid.Row="16" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="16" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
+
+                <Image Source="pack://application:,,,/Images/champs/MissFortune-Icon.png" Grid.Row="16" Grid.Column="5" />
+                <TextBlock Text="5" Grid.Row="16" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Phantom -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Phantom}" Grid.Row="17" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Phantom}" Grid.Row="17" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="17"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Phantom_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Phantom_Describe2}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Phantom_Describe3}"></Run>
+                           Grid.Row="17"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Phantom_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Phantom_Describe2}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Phantom_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/phantom.jpg" Grid.Row="18" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/phantom.jpg" Grid.Row="18" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Mordekaiser-Icon.png" Grid.Row="18" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="18" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Mordekaiser-Icon.png" Grid.Row="18" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="18" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kindred-Icon.png" Grid.Row="18" Grid.Column="2"></Image>
-                <TextBlock Text="4" Grid.Row="18" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kindred-Icon.png" Grid.Row="18" Grid.Column="2" />
+                <TextBlock Text="4" Grid.Row="18" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Karthus-Icon.png" Grid.Row="18" Grid.Column="3"></Image>
-                <TextBlock Text="5" Grid.Row="18" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Karthus-Icon.png" Grid.Row="18" Grid.Column="3" />
+                <TextBlock Text="5" Grid.Row="18" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Robot -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Robot}" Grid.Row="19" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Robot}" Grid.Row="19" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="19"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Robot_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Robot_Describe2}" Foreground="DeepSkyBlue"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Robot_Describe3}"></Run>
+                           Grid.Row="19"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Robot_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Robot_Describe2}" Foreground="DeepSkyBlue" />
+                    <Run Text="{DynamicResource ClassOrigins_Robot_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/robot.jpg" Grid.Row="20" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/robot.jpg" Grid.Row="20" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Blitzcrank-Icon.png" Grid.Row="20" Grid.Column="1" ></Image>
-                <TextBlock Text="2" Grid.Row="20" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Blitzcrank-Icon.png" Grid.Row="20" Grid.Column="1" />
+                <TextBlock Text="2" Grid.Row="20" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Void -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Void}" Grid.Row="21" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Void}" Grid.Row="21" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="21"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Void_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Void_Describe2}" Foreground="Purple"></Run>
+                           Grid.Row="21"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Void_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Void_Describe2}" Foreground="Purple" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/void.jpg" Grid.Row="22" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/void.jpg" Grid.Row="22" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kassadin-Icon.png" Grid.Row="22" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="22" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kassadin-Icon.png" Grid.Row="22" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="22" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/KhaZix-Icon.png" Grid.Row="22" Grid.Column="2"></Image>
-                <TextBlock Text="1" Grid.Row="22" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/KhaZix-Icon.png" Grid.Row="22" Grid.Column="2" />
+                <TextBlock Text="1" Grid.Row="22" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/RekSai-Icon.png" Grid.Row="22" Grid.Column="3"></Image>
-                <TextBlock Text="2" Grid.Row="22" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/RekSai-Icon.png" Grid.Row="22" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="22" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/ChoGath-Icon.png" Grid.Row="22" Grid.Column="4"></Image>
-                <TextBlock Text="4" Grid.Row="22" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/ChoGath-Icon.png" Grid.Row="22" Grid.Column="4" />
+                <TextBlock Text="4" Grid.Row="22" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Wild -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Wild}" Grid.Row="23" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Wild}" Grid.Row="23" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="23"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Wild_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Wild_Describe2}" Foreground="LightYellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Wild_Describe3}"></Run>
+                           Grid.Row="23"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Wild_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Wild_Describe2}" Foreground="LightYellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Wild_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/wild.jpg" Grid.Row="24" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/wild.jpg" Grid.Row="24" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Nidalee-Icon.png" Grid.Row="24" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="24" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Nidalee-Icon.png" Grid.Row="24" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="24" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Warwick-Icon.png" Grid.Row="24" Grid.Column="2"></Image>
-                <TextBlock Text="1" Grid.Row="24" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Warwick-Icon.png" Grid.Row="24" Grid.Column="2" />
+                <TextBlock Text="1" Grid.Row="24" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Ahri-Icon.png" Grid.Row="24" Grid.Column="3"></Image>
-                <TextBlock Text="2" Grid.Row="24" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Ahri-Icon.png" Grid.Row="24" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="24" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Rengar-Icon.png" Grid.Row="24" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="24" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Rengar-Icon.png" Grid.Row="24" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="24" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Gnar-Icon.png" Grid.Row="24" Grid.Column="5"></Image>
-                <TextBlock Text="4" Grid.Row="24" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Gnar-Icon.png" Grid.Row="24" Grid.Column="5" />
+                <TextBlock Text="4" Grid.Row="24" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Yordle -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Yordle}" Grid.Row="25" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Yordle}" Grid.Row="25" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="25"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Yordle_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Yordle_Describe2}" Foreground="White"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Yordle_Describe3}"></Run>
+                           Grid.Row="25"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Yordle_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Yordle_Describe2}" Foreground="White" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Yordle_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/origins/yordle.jpg" Grid.Row="26" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/origins/yordle.jpg" Grid.Row="26" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Tristana-Icon.png" Grid.Row="26" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="26" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Tristana-Icon.png" Grid.Row="26" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="26" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Lulu-Icon.png" Grid.Row="26" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="26" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Lulu-Icon.png" Grid.Row="26" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="26" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kennen-Icon.png" Grid.Row="26" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="26" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kennen-Icon.png" Grid.Row="26" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="26" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Poppy-Icon.png" Grid.Row="26" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="26" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Poppy-Icon.png" Grid.Row="26" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="26" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Veigar-Icon.png" Grid.Row="26" Grid.Column="5"></Image>
-                <TextBlock Text="3" Grid.Row="26" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Veigar-Icon.png" Grid.Row="26" Grid.Column="5" />
+                <TextBlock Text="3" Grid.Row="26" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Gnar-Icon.png" Grid.Row="26" Grid.Column="6"></Image>
-                <TextBlock Text="4" Grid.Row="26" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Gnar-Icon.png" Grid.Row="26" Grid.Column="6" />
+                <TextBlock Text="4" Grid.Row="26" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
             </Grid>
         </WrapPanel>
@@ -479,437 +572,519 @@
         <WrapPanel Orientation="Horizontal">
             <Grid>
                 <Grid.Background>
-                    <SolidColorBrush Color="Black" Opacity="{Binding ElementName=OpacitySlider,Path=Value}"></SolidColorBrush>
+                    <SolidColorBrush Color="Black" Opacity="{Binding ElementName=OpacitySlider,Path=Value}" />
                 </Grid.Background>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
-                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="45" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="65"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="65" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
 
                 <!--Border-->
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 1 0 1" Grid.Row="0" Grid.ColumnSpan="9"/>
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="2" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="4" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="6" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="8" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="10" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="12" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="14" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="16" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="18" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
-                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="20" Grid.ColumnSpan="9" Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 1 0 1" Grid.Row="0" Grid.ColumnSpan="9" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="2" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="4" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="6" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="8" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="10" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="12" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="14" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="16" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="18" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
+                <Border BorderBrush="LightGoldenrodYellow" BorderThickness="0 0 0 1" Grid.Row="20" Grid.ColumnSpan="9"
+                        Margin="0, 0, 0, -3" />
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Classes}" 
-                                               FontSize="16" 
-                                               VerticalAlignment="Center" 
-                                               HorizontalAlignment="Center" 
-                                               Foreground="LightGoldenrodYellow" 
-                                               Grid.Row="0"
-                                               Grid.ColumnSpan="8"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Classes}"
+                           FontSize="16"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="LightGoldenrodYellow"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="8" />
                 <!-- Assassin -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Assassin}" Grid.Row="1" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Assassin}" Grid.Row="1" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="1"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe2}" Foreground="OrangeRed"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe4}" Foreground="OrangeRed"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe5}" Foreground="White"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe6}" Foreground="OrangeRed"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Assassin_Describe7}"></Run>
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe2}" Foreground="OrangeRed" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe4}" Foreground="OrangeRed" />
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe5}" Foreground="White" />
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe6}" Foreground="OrangeRed" />
+                    <Run Text="{DynamicResource ClassOrigins_Assassin_Describe7}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/assassin.jpg" Grid.Row="2" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/assassin.jpg" Grid.Row="2" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/KhaZix-Icon.png" Grid.Row="2" Grid.Column="1" ></Image>
-                <TextBlock Text="1" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/KhaZix-Icon.png" Grid.Row="2" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="2" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Pyke-Icon.png" Grid.Row="2" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="2" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Pyke-Icon.png" Grid.Row="2" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="2" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Zed-Icon.png" Grid.Row="2" Grid.Column="3"></Image>
-                <TextBlock Text="2" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Zed-Icon.png" Grid.Row="2" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="2" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Evelynn-Icon.png" Grid.Row="2" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="2" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Evelynn-Icon.png" Grid.Row="2" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="2" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Katarina-Icon.png" Grid.Row="2" Grid.Column="5"></Image>
-                <TextBlock Text="3" Grid.Row="2" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Katarina-Icon.png" Grid.Row="2" Grid.Column="5" />
+                <TextBlock Text="3" Grid.Row="2" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Rengar-Icon.png" Grid.Row="2" Grid.Column="6"></Image>
-                <TextBlock Text="3" Grid.Row="2" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Rengar-Icon.png" Grid.Row="2" Grid.Column="6" />
+                <TextBlock Text="3" Grid.Row="2" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Akali-Icon.png" Grid.Row="2" Grid.Column="7"></Image>
-                <TextBlock Text="4" Grid.Row="2" Grid.Column="7" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Akali-Icon.png" Grid.Row="2" Grid.Column="7" />
+                <TextBlock Text="4" Grid.Row="2" Grid.Column="7" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Blademaster -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Blademaster}" Grid.Row="3" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Blademaster}" Grid.Row="3" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="3"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe2}" Foreground="PaleVioletRed"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe3}"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe4}"></Run>
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe2}" Foreground="PaleVioletRed" />
+                    <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe3}" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Blademaster_Describe4}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/blademaster.jpg" Grid.Row="4" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/blademaster.jpg" Grid.Row="4" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Fiora-Icon.png" Grid.Row="4" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Fiora-Icon.png" Grid.Row="4" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="4" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Shen-Icon.png" Grid.Row="4" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="4" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Shen-Icon.png" Grid.Row="4" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="4" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Aatrox-Icon.png" Grid.Row="4" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="4" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Aatrox-Icon.png" Grid.Row="4" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="4" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Gangplank-Icon.png" Grid.Row="4" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="4" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Gangplank-Icon.png" Grid.Row="4" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="4" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Draven-Icon.png" Grid.Row="4" Grid.Column="5"></Image>
-                <TextBlock Text="4" Grid.Row="4" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Draven-Icon.png" Grid.Row="4" Grid.Column="5" />
+                <TextBlock Text="4" Grid.Row="4" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Yasuo-Icon.png" Grid.Row="4" Grid.Column="6"></Image>
-                <TextBlock Text="5" Grid.Row="4" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Yasuo-Icon.png" Grid.Row="4" Grid.Column="6" />
+                <TextBlock Text="5" Grid.Row="4" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Brawler -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Brawler}" Grid.Row="5" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Brawler}" Grid.Row="5" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="5"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe2}" Foreground="ForestGreen"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe4}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe5}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe6}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Brawler_Describe7}"></Run>
+                           Grid.Row="5"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe2}" Foreground="ForestGreen" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe4}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe5}" />
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe6}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Brawler_Describe7}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/brawler.jpg" Grid.Row="6" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/brawler.jpg" Grid.Row="6" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Warwick-Icon.png" Grid.Row="6" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="6" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Warwick-Icon.png" Grid.Row="6" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="6" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Blitzcrank-Icon.png" Grid.Row="6" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="6" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Blitzcrank-Icon.png" Grid.Row="6" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="6" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/RekSai-Icon.png" Grid.Row="6" Grid.Column="3"></Image>
-                <TextBlock Text="2" Grid.Row="6" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/RekSai-Icon.png" Grid.Row="6" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="6" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Volibear-Icon.png" Grid.Row="6" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="6" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Volibear-Icon.png" Grid.Row="6" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="6" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/ChoGath-Icon.png" Grid.Row="6" Grid.Column="5"></Image>
-                <TextBlock Text="4" Grid.Row="6" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/ChoGath-Icon.png" Grid.Row="6" Grid.Column="5" />
+                <TextBlock Text="4" Grid.Row="6" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
                 <!-- Elementalist -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Elementalist}" Grid.Row="7" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Elementalist}" Grid.Row="7" Grid.Column="0"
+                           FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="7"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe2}" Foreground="DeepSkyBlue"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe3}"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe4}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe5}" Foreground="LightSlateGray"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe6}"></Run>
+                           Grid.Row="7"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe2}" Foreground="DeepSkyBlue" />
+                    <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe3}" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe4}" />
+                    <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe5}" Foreground="LightSlateGray" />
+                    <Run Text="{DynamicResource ClassOrigins_Elementalist_Describe6}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/elementalist.jpg" Grid.Row="8" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/elementalist.jpg" Grid.Row="8" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Lissandra-Icon.png" Grid.Row="8" Grid.Column="1"></Image>
-                <TextBlock Text="2" Grid.Row="8" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Lissandra-Icon.png" Grid.Row="8" Grid.Column="1" />
+                <TextBlock Text="2" Grid.Row="8" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kennen-Icon.png" Grid.Row="8" Grid.Column="2"></Image>
-                <TextBlock Text="3" Grid.Row="8" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kennen-Icon.png" Grid.Row="8" Grid.Column="2" />
+                <TextBlock Text="3" Grid.Row="8" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Brand-Icon.png" Grid.Row="8" Grid.Column="3"></Image>
-                <TextBlock Text="4" Grid.Row="8" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Brand-Icon.png" Grid.Row="8" Grid.Column="3" />
+                <TextBlock Text="4" Grid.Row="8" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Anivia-Icon.png" Grid.Row="8" Grid.Column="4"></Image>
-                <TextBlock Text="5" Grid.Row="8" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Anivia-Icon.png" Grid.Row="8" Grid.Column="4" />
+                <TextBlock Text="5" Grid.Row="8" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
                 <!-- Guardian -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Guardian}" Grid.Row="9" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Guardian}" Grid.Row="9" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="9"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Guardian_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Guardian_Describe2}" Foreground="Yellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Guardian_Describe3}"></Run>
+                           Grid.Row="9"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Guardian_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Guardian_Describe2}" Foreground="Yellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Guardian_Describe3}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/guardian.jpg" Grid.Row="10" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/guardian.jpg" Grid.Row="10" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Braum-Icon.png" Grid.Row="10" Grid.Column="1"></Image>
-                <TextBlock Text="2" Grid.Row="10" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Braum-Icon.png" Grid.Row="10" Grid.Column="1" />
+                <TextBlock Text="2" Grid.Row="10" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Leona-Icon.png" Grid.Row="10" Grid.Column="2"></Image>
-                <TextBlock Text="4" Grid.Row="10" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Leona-Icon.png" Grid.Row="10" Grid.Column="2" />
+                <TextBlock Text="4" Grid.Row="10" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
                 <!-- Gunslinger -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Gunslinger}" Grid.Row="11" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Gunslinger}" Grid.Row="11" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="11"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe2}" Foreground="PaleVioletRed"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe4}" Foreground="PaleVioletRed"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe5}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe6}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe7}"></Run>
+                           Grid.Row="11"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe2}" Foreground="PaleVioletRed" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe4}" Foreground="PaleVioletRed" />
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe5}" />
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe6}" />
+                    <Run Text="{DynamicResource ClassOrigins_Gunslinger_Describe7}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/gunslinger.jpg" Grid.Row="12" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/gunslinger.jpg" Grid.Row="12" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Graves-Icon.png" Grid.Row="12" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="12" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Graves-Icon.png" Grid.Row="12" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="12" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Tristana-Icon.png" Grid.Row="12" Grid.Column="2"></Image>
-                <TextBlock Text="1" Grid.Row="12" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Tristana-Icon.png" Grid.Row="12" Grid.Column="2" />
+                <TextBlock Text="1" Grid.Row="12" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Lucian-Icon.png" Grid.Row="12" Grid.Column="3"></Image>
-                <TextBlock Text="2" Grid.Row="12" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Lucian-Icon.png" Grid.Row="12" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="12" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Gangplank-Icon.png" Grid.Row="12" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="12" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Gangplank-Icon.png" Grid.Row="12" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="12" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/MissFortune-Icon.png" Grid.Row="12" Grid.Column="5"></Image>
-                <TextBlock Text="5" Grid.Row="12" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/MissFortune-Icon.png" Grid.Row="12" Grid.Column="5" />
+                <TextBlock Text="5" Grid.Row="12" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
                 <!-- Knight -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Knight}" Grid.Row="13" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Knight}" Grid.Row="13" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="13"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe2}" Foreground="Yellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe4}" Foreground="Red"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe5}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe6}" Foreground="Yellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe7}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe8}" Foreground="Yellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe9}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Knight_Describe10}" Foreground="Yellow"></Run>
+                           Grid.Row="13"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe2}" Foreground="Yellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe4}" Foreground="Red" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe5}" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe6}" Foreground="Yellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe7}" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe8}" Foreground="Yellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe9}" />
+                    <Run Text="{DynamicResource ClassOrigins_Knight_Describe10}" Foreground="Yellow" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/knight.jpg" Grid.Row="14" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/knight.jpg" Grid.Row="14" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Darius-Icon.png" Grid.Row="14" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="14" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Darius-Icon.png" Grid.Row="14" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="14" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Garen-Icon.png" Grid.Row="14" Grid.Column="2"></Image>
-                <TextBlock Text="1" Grid.Row="14" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Garen-Icon.png" Grid.Row="14" Grid.Column="2" />
+                <TextBlock Text="1" Grid.Row="14" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Mordekaiser-Icon.png" Grid.Row="14" Grid.Column="3"></Image>
-                <TextBlock Text="1" Grid.Row="14" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Mordekaiser-Icon.png" Grid.Row="14" Grid.Column="3" />
+                <TextBlock Text="1" Grid.Row="14" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Poppy-Icon.png" Grid.Row="14" Grid.Column="4"></Image>
-                <TextBlock Text="3" Grid.Row="14" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Poppy-Icon.png" Grid.Row="14" Grid.Column="4" />
+                <TextBlock Text="3" Grid.Row="14" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Sejuani-Icon.png" Grid.Row="14" Grid.Column="5"></Image>
-                <TextBlock Text="4" Grid.Row="14" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Sejuani-Icon.png" Grid.Row="14" Grid.Column="5" />
+                <TextBlock Text="4" Grid.Row="14" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kayle-Icon.png" Grid.Row="14" Grid.Column="6"></Image>
-                <TextBlock Text="5" Grid.Row="14" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kayle-Icon.png" Grid.Row="14" Grid.Column="6" />
+                <TextBlock Text="5" Grid.Row="14" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Ranger -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Ranger}" Grid.Row="15" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Ranger}" Grid.Row="15" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="15"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Ranger_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ranger_Describe2}" Foreground="LightYellow"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ranger_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Ranger_Describe4}"></Run>
+                           Grid.Row="15"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Ranger_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Ranger_Describe2}" Foreground="LightYellow" />
+                    <Run Text="{DynamicResource ClassOrigins_Ranger_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Ranger_Describe4}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/ranger.jpg" Grid.Row="16" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/ranger.jpg" Grid.Row="16" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Vayne-Icon.png" Grid.Row="16" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="16" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Vayne-Icon.png" Grid.Row="16" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="16" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Varus-Icon.png" Grid.Row="16" Grid.Column="2"></Image>
-                <TextBlock Text="2" Grid.Row="16" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Varus-Icon.png" Grid.Row="16" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="16" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Ashe-Icon.png" Grid.Row="16" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="16" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Ashe-Icon.png" Grid.Row="16" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="16" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kindred-Icon.png" Grid.Row="16" Grid.Column="4"></Image>
-                <TextBlock Text="4" Grid.Row="16" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kindred-Icon.png" Grid.Row="16" Grid.Column="4" />
+                <TextBlock Text="4" Grid.Row="16" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
 
                 <!-- Shapeshifter -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Shapeshifter}" Grid.Row="17" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Shapeshifter}" Grid.Row="17" Grid.Column="0"
+                           FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="17"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe2}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe4}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe5}" Foreground="ForestGreen"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe6}"></Run>
+                           Grid.Row="17"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe2}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe4}" />
+                    <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe5}" Foreground="ForestGreen" />
+                    <Run Text="{DynamicResource ClassOrigins_Shapeshifter_Describe6}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/shapeshifter.jpg" Grid.Row="18" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/shapeshifter.jpg" Grid.Row="18" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Nidalee-Icon.png" Grid.Row="18" Grid.Column="1"></Image>
-                <TextBlock Text="1" Grid.Row="18" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Nidalee-Icon.png" Grid.Row="18" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="18" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Elise-Icon.png" Grid.Row="18" Grid.Column="2"></Image>
-                <TextBlock Text="1" Grid.Row="18" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Elise-Icon.png" Grid.Row="18" Grid.Column="2" />
+                <TextBlock Text="1" Grid.Row="18" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Shyvana-Icon.png" Grid.Row="18" Grid.Column="3"></Image>
-                <TextBlock Text="3" Grid.Row="18" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Shyvana-Icon.png" Grid.Row="18" Grid.Column="3" />
+                <TextBlock Text="3" Grid.Row="18" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Gnar-Icon.png" Grid.Row="18" Grid.Column="4"></Image>
-                <TextBlock Text="4" Grid.Row="18" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Gnar-Icon.png" Grid.Row="18" Grid.Column="4" />
+                <TextBlock Text="4" Grid.Row="18" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Swain-Icon.png" Grid.Row="18" Grid.Column="5"></Image>
-                <TextBlock Text="5" Grid.Row="18" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Swain-Icon.png" Grid.Row="18" Grid.Column="5" />
+                <TextBlock Text="5" Grid.Row="18" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
                 <!-- Sorcerer -->
 
-                <TextBlock Text="{DynamicResource ClassOrigins_Sorcerer}" Grid.Row="19" Grid.Column="0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Text="{DynamicResource ClassOrigins_Sorcerer}" Grid.Row="19" Grid.Column="0" FontSize="12"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGoldenrodYellow"
+                           FontWeight="Bold" TextWrapping="Wrap" />
                 <TextBlock Grid.ColumnSpan="7"
-                                               Grid.Row="19"
-                                               Grid.Column="1"
-                                               FontSize="12" 
-                                               Foreground="LightGoldenrodYellow"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe1}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe2}" Foreground="DeepSkyBlue"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe3}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe4}" Foreground="MediumPurple"></Run>
-                                        <LineBreak></LineBreak>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe5}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe6}" Foreground="MediumPurple"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe7}"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe8}" Foreground="MediumPurple"></Run>
-                                        <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe9}"></Run>
+                           Grid.Row="19"
+                           Grid.Column="1"
+                           FontSize="12"
+                           Foreground="LightGoldenrodYellow"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap">
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe1}" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe2}" Foreground="DeepSkyBlue" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe3}" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe4}" Foreground="MediumPurple" />
+                    <LineBreak />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe5}" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe6}" Foreground="MediumPurple" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe7}" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe8}" Foreground="MediumPurple" />
+                    <Run Text="{DynamicResource ClassOrigins_Sorcerer_Describe9}" />
                 </TextBlock>
-                <Image Source="pack://application:,,,/Images/classes/sorcerer.jpg" Grid.Row="20" Grid.Column="0"></Image>
+                <Image Source="pack://application:,,,/Images/classes/sorcerer.jpg" Grid.Row="20" Grid.Column="0" />
 
-                <Image Source="pack://application:,,,/Images/champs/Kassadin-Icon.png" Grid.Row="20" Grid.Column="1" ></Image>
-                <TextBlock Text="1" Grid.Row="20" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Kassadin-Icon.png" Grid.Row="20" Grid.Column="1" />
+                <TextBlock Text="1" Grid.Row="20" Grid.Column="1" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Ahri-Icon.png" Grid.Row="20" Grid.Column="2" ></Image>
-                <TextBlock Text="2" Grid.Row="20" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
-                
-                <Image Source="pack://application:,,,/Images/champs/TwistedFate-Icon.png" Grid.Row="20" Grid.Column="3" ></Image>
-                <TextBlock Text="2" Grid.Row="20" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Ahri-Icon.png" Grid.Row="20" Grid.Column="2" />
+                <TextBlock Text="2" Grid.Row="20" Grid.Column="2" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Lulu-Icon.png" Grid.Row="20" Grid.Column="4" ></Image>
-                <TextBlock Text="2" Grid.Row="20" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/TwistedFate-Icon.png" Grid.Row="20" Grid.Column="3" />
+                <TextBlock Text="2" Grid.Row="20" Grid.Column="3" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Morgana-Icon.png" Grid.Row="20" Grid.Column="5" ></Image>
-                <TextBlock Text="3" Grid.Row="20" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Lulu-Icon.png" Grid.Row="20" Grid.Column="4" />
+                <TextBlock Text="2" Grid.Row="20" Grid.Column="4" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Veigar-Icon.png" Grid.Row="20" Grid.Column="6" ></Image>
-                <TextBlock Text="3" Grid.Row="20" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Morgana-Icon.png" Grid.Row="20" Grid.Column="5" />
+                <TextBlock Text="3" Grid.Row="20" Grid.Column="5" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/AurelionSol-Icon.png" Grid.Row="20" Grid.Column="7" ></Image>
-                <TextBlock Text="4" Grid.Row="20" Grid.Column="7" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/Veigar-Icon.png" Grid.Row="20" Grid.Column="6" />
+                <TextBlock Text="3" Grid.Row="20" Grid.Column="6" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
-                <Image Source="pack://application:,,,/Images/champs/Karthus-Icon.png" Grid.Row="20" Grid.Column="8" ></Image>
-                <TextBlock Text="5" Grid.Row="20" Grid.Column="8" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold"></TextBlock>
+                <Image Source="pack://application:,,,/Images/champs/AurelionSol-Icon.png" Grid.Row="20" Grid.Column="7" />
+                <TextBlock Text="4" Grid.Row="20" Grid.Column="7" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
+
+                <Image Source="pack://application:,,,/Images/champs/Karthus-Icon.png" Grid.Row="20" Grid.Column="8" />
+                <TextBlock Text="5" Grid.Row="20" Grid.Column="8" FontSize="12" VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left" Foreground="LightGoldenrodYellow" FontWeight="Bold" />
 
             </Grid>
         </WrapPanel>
     </DataTemplate>
 
     <Style TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="{StaticResource Cabin}"/>
+        <Setter Property="FontFamily" Value="{StaticResource Cabin}" />
     </Style>
     <!--//////////////////////////-->
     <!--Class/Origins Descriptions-->
     <!--/////&#10; = LineBreak////-->
     <!--//////////////////////////-->
-<!--Classes-->
+    <!--Classes-->
     <!--Assassin-->
-    <s:String x:Key="Assassin" xml:space="preserve">Assassin</s:String>    
+    <s:String x:Key="Assassin" xml:space="preserve">Assassin</s:String>
     <s:String x:Key="Assassin1" xml:space="preserve">Assassins leap to the farthest enemy at the start of combat and deal additional</s:String>
     <s:String x:Key="Assassin3" xml:space="preserve">Critical Strike Damage</s:String>
     <s:String x:Key="Assassin4" xml:space="preserve">(3) 150% (6) 350%</s:String>
@@ -920,7 +1095,7 @@
     <s:String x:Key="Blademaster3" xml:space="preserve">each attack.</s:String>
     <s:String x:Key="Blademaster4" xml:space="preserve">(3) 1 Additional Strike (6) 2 Additional Strikes</s:String>
 
-<!--Origins-->
+    <!--Origins-->
     <!--Demons-->
     <s:String x:Key="Demons" xml:space="preserve">Demons</s:String>
     <s:String x:Key="Demons1" xml:space="preserve">Chance on hit to burn all of target's current</s:String>

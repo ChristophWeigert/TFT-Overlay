@@ -121,7 +121,7 @@
     <!--ClassOrigins Descriptions-->
     <!--&#10; = LineBreak-->
     <!--/////////////////-->
-    
+
     <!--Origins | Effects and Champions-->
     <s:String x:Key="ClassOrigins_Origins" xml:space="preserve">种族 | 羁绊效果</s:String>
 
@@ -310,7 +310,7 @@
     <s:String x:Key="ClassOrigins_Sorcerer_Describe8" xml:space="preserve">技能伤害</s:String>
     <s:String x:Key="ClassOrigins_Sorcerer_Describe9" xml:space="preserve">(6)</s:String>
 
-  
+
     <!--/////////////////-->
     <!--Charts-->
     <!--&#10; = LineBreak-->
@@ -366,5 +366,5 @@
 
     <!--Reset Button-->
     <s:String x:Key="ItemsBuilder_ResetButton" xml:space="preserve">重置</s:String>
-  
+
 </ResourceDictionary>

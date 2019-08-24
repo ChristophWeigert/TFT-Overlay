@@ -1,34 +1,64 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Interop;
 using TFT_Overlay.Properties;
 using TFT_Overlay.Utilities;
+using Application = System.Windows.Forms.Application;
 
 namespace TFT_Overlay
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto, ExactSpelling = true)]
-        public static extern IntPtr GetForegroundWindow();
-        [System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
-        public static extern bool SetForegroundWindow(IntPtr hWnd);
-        public IntPtr myHandle;
-        private readonly System.Timers.Timer tTop; 
+        private readonly Cursor LoLHover = CustomCursor.FromByteArray(Properties.Resources.LoLHover);
 
         private readonly Cursor LoLNormal = CustomCursor.FromByteArray(Properties.Resources.LoLNormal);
         private readonly Cursor LoLPointer = CustomCursor.FromByteArray(Properties.Resources.LoLPointer);
-        private readonly Cursor LoLHover = CustomCursor.FromByteArray(Properties.Resources.LoLHover);
-
-        private string CurrentVersion { get; } = Utilities.Version.version;
-        private bool OnTop { get; set; } = true;
+        private readonly Timer tTop;
+        public IntPtr myHandle;
 
         private bool canDrag;
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+            this.LoadStringResource(Settings.Default.Language);
+            this.Cursor = this.LoLNormal;
+
+            this.WindowState = WindowState.Normal;
+            this.ShowInTaskbar = true;
+            this.Topmost = this.OnTop;
+            this.myHandle = new WindowInteropHelper(this).Handle;
+            //...
+            this.tTop = new Timer(15000); //set Timer  
+            this.tTop.Elapsed += this.theout;
+            this.tTop.AutoReset = true;
+            this.tTop.Enabled = true;
+
+            this.CanDrag = !Settings.Default.Lock;
+
+            if (Settings.Default.AutoDim)
+            {
+                Thread t = new Thread(this.AutoDim)
+                           {
+                               IsBackground = true
+                           };
+
+                t.Start();
+            }
+        }
+
         public bool CanDrag
         {
             get => this.canDrag;
@@ -39,36 +69,16 @@ namespace TFT_Overlay
             }
         }
 
-        public MainWindow()
-        {
-            this.InitializeComponent();
-            this.LoadStringResource(Settings.Default.Language);
-            this.Cursor = this.LoLNormal;
+        private string CurrentVersion { get; } = Utilities.Version.version;
+        private bool OnTop { get; set; } = true;
 
-            this.WindowState = System.Windows.WindowState.Normal;
-            this.ShowInTaskbar = true;
-            this.Topmost = this.OnTop;
-            this.myHandle = new System.Windows.Interop.WindowInteropHelper(this).Handle;
-            //...
-            this.tTop = new System.Timers.Timer(15000);//set Timer  
-            this.tTop.Elapsed += this.theout;
-            this.tTop.AutoReset = true;
-            this.tTop.Enabled = true;
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern IntPtr GetForegroundWindow();
 
-            this.CanDrag = !Settings.Default.Lock;
+        [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
 
-            if (Settings.Default.AutoDim)
-            {
-                Thread t = new Thread(this.AutoDim)
-                {
-                    IsBackground = true
-                };
-
-                t.Start();
-            }
-        }
-
-        public void theout(object source, System.Timers.ElapsedEventArgs e)
+        public void theout(object source, ElapsedEventArgs e)
         {
             if (this.OnTop)
             {
@@ -76,6 +86,7 @@ namespace TFT_Overlay
                 {
                     SetForegroundWindow(this.myHandle);
                 }
+
                 try
                 {
                     this.Dispatcher.Invoke(
@@ -83,40 +94,153 @@ namespace TFT_Overlay
                         {
                             this.Topmost = false;
                             this.Topmost = true;
-
                         }
                     );
                 }
-                catch (System.Threading.Tasks.TaskCanceledException errMsg)
+                catch (TaskCanceledException errMsg)
                 {
                     this.tTop.Stop();
                 }
             }
-        } 
-        
-        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        }
+
+        private void AutoDim()
+        {
+            while (true)
+            {
+                if (this.IsLeagueOrOverlayActive())
+                {
+                    this.Dispatcher.BeginInvoke(new ThreadStart(() => System.Windows.Application.Current.MainWindow.Opacity = 1));
+                }
+                else if (!this.IsLeagueOrOverlayActive())
+                {
+                    this.Dispatcher.BeginInvoke(new ThreadStart(() => System.Windows.Application.Current.MainWindow.Opacity = .2));
+                }
+
+                Thread.Sleep(500);
+            }
+        }
+
+        private void AutoDim_Click(object sender, RoutedEventArgs e)
+        {
+            string state = Settings.Default.AutoDim ? "OFF" : "ON";
+
+            MessageBoxResult result = MessageBox.Show($"Would you like to turn {state} Auto-Dim? This will restart the program.", "Auto-Dim", MessageBoxButton.OKCancel);
+
+            if (result != MessageBoxResult.OK)
+            {
+                return;
+            }
+
+            Settings.FindAndUpdate("AutoDim", !Settings.Default.AutoDim);
+
+            Application.Restart();
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void IconOpacityHandler_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                string header = menuItem.Header.ToString();
+                double opacity = double.Parse(header.Substring(0, header.Length - 1)) / 100;
+
+                Settings.FindAndUpdate("IconOpacity", opacity);
+            }
+        }
+
+        private bool IsLeagueOrOverlayActive()
+        {
+            string currentActiveProcessName = ProcessHelper.GetActiveProcessName();
+            return currentActiveProcessName.Contains("League of Legends") || currentActiveProcessName.Contains("TFT Overlay");
+        }
+
+        /// <summary>
+        ///     Removes previous ItemStrings.xaml from MergedDictionaries and adds the one matching locale tag
+        /// </summary>
+        /// <param name="locale">localization tag</param>
+        private void LoadStringResource(string locale)
+        {
+            try
+            {
+                ResourceDictionary resources = new ResourceDictionary
+                                               {
+                                                   Source = new Uri("pack://application:,,,/Resource/Localization/ItemStrings_" + locale + ".xaml", UriKind.Absolute)
+                                               };
+
+
+                ResourceDictionary current = System.Windows.Application.Current.Resources.MergedDictionaries.FirstOrDefault(
+                    m => m.Source.OriginalString.EndsWith("ItemStrings_" + locale + ".xaml"));
+
+                if (current != null)
+                {
+                    System.Windows.Application.Current.Resources.MergedDictionaries.Remove(current);
+                }
+
+                System.Windows.Application.Current.Resources.MergedDictionaries.Add(resources);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                this.LoadStringResource("en-US");
+            }
+        }
+
+        private void Localization_Credits(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "de-DE: Revyn#0969\nes-AR: Oscarinom\nes-MX: Jukai#3434\nfr-FR: Darkneight\nHU: Edizone#6157\nit-IT: BlackTYWhite#0943\nJA: つかぽん＠PKMotion#8731\nPL: Czapson#9774\npt-BR: Bigg#4019\nRU: Jeremy Buttson#2586\nSL: Shokugeki#0012\nvi-VN: GodV759\nzh-CN: nevex#4441\nzh-TW: noheart#6977\n",
+                "Localization Credits");
+        }
+
+        /// <summary>
+        ///     Takes MenuItem, and passes its Header into LoadStringresource()
+        /// </summary>
+        /// <param name="sender">Should be of type MenuItem</param>
+        /// <param name="e"></param>
+        private void Localization_Handler(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                string tag = menuItem.Header.ToString();
+                this.LoadStringResource(tag);
+
+                Settings.FindAndUpdate("Language", tag);
+            }
+        }
+
+        private void LocalizationHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/Just2good/TFT-Overlay/blob/master/Localization.md");
+        }
+
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
         {
             Settings.Default.Save();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Application.Current.Shutdown();
+            ((Control) sender).Cursor = this.LoLPointer;
+            if (this.CanDrag)
+            {
+                this.DragMove();
+            }
         }
 
-        private void MenuItem_Click_About(object sender, RoutedEventArgs e)
+        private void MainWindow_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("TFT Information Overlay V" + this.CurrentVersion + " by J2GKaze/Jinsoku#4019\n\nDM me on Discord if you have any questions\n\nLast Updated: August 11th, 2019 @ 2:06AM PDT", "About");
+            ((Control) sender).Cursor = this.LoLNormal;
         }
 
-        private void MenuItem_Click_Credits(object sender, RoutedEventArgs e)
+        private void MainWindow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Big thanks to:\nChaoticoz: Lock Window, Always on Top, and Mouseover\nAsemco/Asemco#7390: Adding Origins and Classes\nAthenyx#9406: Designs\nTenebris: Auto-Updater\nOBJECT#3031: Items/Origins/Classes Strings Base\nJpgdev: Readme format\nKbphan\nEerilai\nꙅꙅɘᴎTqAbɘbᴎɘld#1175: Window Position/Size Saving, CPU Threading Fix\nNarcolic#6374: Item Builder\nIzoyo: Fullscreen\n\nShoutout to:\nAlexander321#7153 for the Discord Nitro Gift!\nAnonymous for Reddit Gold\nu/test01011 for Reddit Gold\n\nmac#0001 & bNatural#0001(Feel free to bug these 2 on Discord) ;)\nShamish#4895 (Make sure you bug this guy a lot)\nDekinosai#7053 (Buy this man tons of drinks)", "Credits");
+            ((Control) sender).Cursor = this.LoLHover;
         }
 
-        private void MenuItem_Click_Lock(object sender, RoutedEventArgs e)
+        private void MainWindow_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.CanDrag = !this.CanDrag;
+            ((Control) sender).Cursor = this.LoLNormal;
         }
 
         private void MenuItem_AutoUpdate(object sender, RoutedEventArgs e)
@@ -132,8 +256,31 @@ namespace TFT_Overlay
 
             Settings.FindAndUpdate("AutoUpdate", !Settings.Default.AutoUpdate);
 
-            System.Windows.Forms.Application.Restart();
-            Application.Current.Shutdown();
+            Application.Restart();
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void MenuItem_Click_About(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "TFT Information Overlay V" + this.CurrentVersion + " by J2GKaze/Jinsoku#4019\n\nDM me on Discord if you have any questions\n\nLast Updated: August 11th, 2019 @ 2:06AM PDT", "About");
+        }
+
+        private void MenuItem_Click_Credits(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "Big thanks to:\nChaoticoz: Lock Window, Always on Top, and Mouseover\nAsemco/Asemco#7390: Adding Origins and Classes\nAthenyx#9406: Designs\nTenebris: Auto-Updater\nOBJECT#3031: Items/Origins/Classes Strings Base\nJpgdev: Readme format\nKbphan\nEerilai\nꙅꙅɘᴎTqAbɘbᴎɘld#1175: Window Position/Size Saving, CPU Threading Fix\nNarcolic#6374: Item Builder\nIzoyo: Fullscreen\n\nShoutout to:\nAlexander321#7153 for the Discord Nitro Gift!\nAnonymous for Reddit Gold\nu/test01011 for Reddit Gold\n\nmac#0001 & bNatural#0001(Feel free to bug these 2 on Discord) ;)\nShamish#4895 (Make sure you bug this guy a lot)\nDekinosai#7053 (Buy this man tons of drinks)",
+                "Credits");
+        }
+
+        private void MenuItem_Click_Lock(object sender, RoutedEventArgs e)
+        {
+            this.CanDrag = !this.CanDrag;
         }
 
         private void MenuItem_Click_OnTop(object sender, RoutedEventArgs e)
@@ -150,120 +297,9 @@ namespace TFT_Overlay
             }
         }
 
-        private void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void OpenChangelog_Click(object sender, RoutedEventArgs e)
         {
-            ((Control)sender).Cursor = this.LoLPointer;
-            if (this.CanDrag)
-            {
-                this.DragMove();
-            }
-        }
-
-        private void MainWindow_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            ((Control)sender).Cursor = this.LoLNormal;
-        }
-
-        private void MainWindow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ((Control)sender).Cursor = this.LoLHover;
-        }
-
-        private void MainWindow_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            ((Control)sender).Cursor = this.LoLNormal;
-        }
-
-        private void AutoDim_Click(object sender, RoutedEventArgs e)
-        {
-            string state = Settings.Default.AutoDim ? "OFF" : "ON";
-
-            MessageBoxResult result = MessageBox.Show($"Would you like to turn {state} Auto-Dim? This will restart the program.", "Auto-Dim", MessageBoxButton.OKCancel);
-
-            if (result != MessageBoxResult.OK)
-            {
-                return;
-            }
-
-            Settings.FindAndUpdate("AutoDim", !Settings.Default.AutoDim);
-
-            System.Windows.Forms.Application.Restart();
-            Application.Current.Shutdown();
-        }
-
-        private void AutoDim()
-        {
-            while (true)
-            {
-                if (this.IsLeagueOrOverlayActive())
-                {
-                    this.Dispatcher.BeginInvoke(new ThreadStart(() => App.Current.MainWindow.Opacity = 1));
-                }
-                else if (!this.IsLeagueOrOverlayActive())
-                {
-                    this.Dispatcher.BeginInvoke(new ThreadStart(() => App.Current.MainWindow.Opacity = .2));
-                }
-
-                Thread.Sleep(500);
-            }
-        }
-
-        private bool IsLeagueOrOverlayActive()
-        {
-            string currentActiveProcessName = ProcessHelper.GetActiveProcessName();
-            return currentActiveProcessName.Contains("League of Legends") || currentActiveProcessName.Contains("TFT Overlay");
-        }
-
-        /// <summary>
-        /// Removes previous ItemStrings.xaml from MergedDictionaries and adds the one matching locale tag
-        /// </summary>
-        /// <param name="locale">localization tag</param>
-        private void LoadStringResource(string locale)
-        {
-            try
-            {
-                ResourceDictionary resources = new ResourceDictionary
-                                               {
-                                                   Source = new Uri("pack://application:,,,/Resource/Localization/ItemStrings_" + locale + ".xaml", UriKind.Absolute)
-                                               };
-
-
-                ResourceDictionary current = Application.Current.Resources.MergedDictionaries.FirstOrDefault(
-                                 m => m.Source.OriginalString.EndsWith("ItemStrings_" + locale + ".xaml"));
-
-                if (current != null)
-                {
-                    Application.Current.Resources.MergedDictionaries.Remove(current);
-                }
-
-                Application.Current.Resources.MergedDictionaries.Add(resources);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                this.LoadStringResource("en-US");
-            }
-        }
-
-        private void Localization_Credits(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("de-DE: Revyn#0969\nes-AR: Oscarinom\nes-MX: Jukai#3434\nfr-FR: Darkneight\nHU: Edizone#6157\nit-IT: BlackTYWhite#0943\nJA: つかぽん＠PKMotion#8731\nPL: Czapson#9774\npt-BR: Bigg#4019\nRU: Jeremy Buttson#2586\nSL: Shokugeki#0012\nvi-VN: GodV759\nzh-CN: nevex#4441\nzh-TW: noheart#6977\n", "Localization Credits");
-        }
-
-        /// <summary>
-        /// Takes MenuItem, and passes its Header into LoadStringresource()
-        /// </summary>
-        /// <param name="sender">Should be of type MenuItem</param>
-        /// <param name="e"></param>
-        private void Localization_Handler(object sender, RoutedEventArgs e)
-        {
-            if (sender is MenuItem menuItem)
-            {
-                string tag = menuItem.Header.ToString();
-                this.LoadStringResource(tag);
-
-                Settings.FindAndUpdate("Language", tag);
-            }
+            Process.Start("https://github.com/Just2good/TFT-Overlay/blob/master/README.md#version-history");
         }
 
         private void ResetToDefault_Click(object sender, RoutedEventArgs e)
@@ -271,27 +307,6 @@ namespace TFT_Overlay
             Settings.Default.Reset();
             this.CanDrag = true;
             this.LoadStringResource(Settings.Default.Language);
-        }
-
-        private void IconOpacityHandler_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is MenuItem menuItem)
-            {
-                string header = menuItem.Header.ToString();
-                double opacity = double.Parse(header.Substring(0, header.Length - 1)) / 100;
-
-                Settings.FindAndUpdate("IconOpacity", opacity);
-            }
-        }
-
-        private void OpenChangelog_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/Just2good/TFT-Overlay/blob/master/README.md#version-history");
-        }
-
-        private void LocalizationHelp_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/Just2good/TFT-Overlay/blob/master/Localization.md");
         }
     }
 }
