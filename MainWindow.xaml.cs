@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
@@ -13,6 +14,7 @@ using System.Windows.Interop;
 using TFT_Overlay.Properties;
 using TFT_Overlay.Utilities;
 using Application = System.Windows.Forms.Application;
+using Timer = System.Timers.Timer;
 
 namespace TFT_Overlay
 {
@@ -21,27 +23,32 @@ namespace TFT_Overlay
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly Cursor LoLHover = CustomCursor.FromByteArray(Properties.Resources.LoLHover);
-
-        private readonly Cursor LoLNormal = CustomCursor.FromByteArray(Properties.Resources.LoLNormal);
-        private readonly Cursor LoLPointer = CustomCursor.FromByteArray(Properties.Resources.LoLPointer);
+        private readonly Cursor loLHover = CustomCursor.FromByteArray(Properties.Resources.LoLHover);
+        private readonly Cursor loLNormal = CustomCursor.FromByteArray(Properties.Resources.LoLNormal);
+        private readonly Cursor loLPointer = CustomCursor.FromByteArray(Properties.Resources.LoLPointer);
         private readonly Timer tTop;
+        /// <summary>
+        /// My handle
+        /// </summary>
         public IntPtr myHandle;
 
         private bool canDrag;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             this.InitializeComponent();
             this.LoadStringResource(Settings.Default.Language);
-            this.Cursor = this.LoLNormal;
+            this.Cursor = this.loLNormal;
 
             this.WindowState = WindowState.Normal;
             this.ShowInTaskbar = true;
             this.Topmost = this.OnTop;
             this.myHandle = new WindowInteropHelper(this).Handle;
-            //...
-            this.tTop = new Timer(15000); //set Timer  
+
+            this.tTop = new Timer(15000);
             this.tTop.Elapsed += this.theout;
             this.tTop.AutoReset = true;
             this.tTop.Enabled = true;
@@ -51,14 +58,20 @@ namespace TFT_Overlay
             if (Settings.Default.AutoDim)
             {
                 Thread t = new Thread(this.AutoDim)
-                           {
-                               IsBackground = true
-                           };
+                {
+                    IsBackground = true
+                };
 
                 t.Start();
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance can drag.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance can drag; otherwise, <c>false</c>.
+        /// </value>
         public bool CanDrag
         {
             get => this.canDrag;
@@ -72,12 +85,26 @@ namespace TFT_Overlay
         private string CurrentVersion { get; } = Utilities.Version.version;
         private bool OnTop { get; set; } = true;
 
+        /// <summary>
+        /// Gets the foreground window.
+        /// </summary>
+        /// <returns></returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern IntPtr GetForegroundWindow();
 
+        /// <summary>
+        /// Sets the foreground window.
+        /// </summary>
+        /// <param name="hWnd">The h WND.</param>
+        /// <returns></returns>
         [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
 
+        /// <summary>
+        /// Theouts the specified source.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="e">The <see cref="ElapsedEventArgs"/> instance containing the event data.</param>
         public void theout(object source, ElapsedEventArgs e)
         {
             if (this.OnTop)
@@ -97,7 +124,7 @@ namespace TFT_Overlay
                         }
                     );
                 }
-                catch (TaskCanceledException errMsg)
+                catch (TaskCanceledException)
                 {
                     this.tTop.Stop();
                 }
@@ -108,14 +135,9 @@ namespace TFT_Overlay
         {
             while (true)
             {
-                if (this.IsLeagueOrOverlayActive())
-                {
-                    this.Dispatcher.BeginInvoke(new ThreadStart(() => System.Windows.Application.Current.MainWindow.Opacity = 1));
-                }
-                else if (!this.IsLeagueOrOverlayActive())
-                {
-                    this.Dispatcher.BeginInvoke(new ThreadStart(() => System.Windows.Application.Current.MainWindow.Opacity = .2));
-                }
+                this.Dispatcher.BeginInvoke(this.IsLeagueOrOverlayActive()
+                    ? new ThreadStart(() => System.Windows.Application.Current.MainWindow.Opacity = 1)
+                    : new ThreadStart(() => System.Windows.Application.Current.MainWindow.Opacity = .2));
 
                 Thread.Sleep(500);
             }
@@ -140,13 +162,15 @@ namespace TFT_Overlay
 
         private void IconOpacityHandler_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is MenuItem menuItem)
+            if (!(sender is MenuItem menuItem))
             {
-                string header = menuItem.Header.ToString();
-                double opacity = double.Parse(header.Substring(0, header.Length - 1)) / 100;
-
-                Settings.FindAndUpdate("IconOpacity", opacity);
+                return;
             }
+
+            string header = menuItem.Header.ToString();
+            double opacity = double.Parse(header.Substring(0, header.Length - 1)) / 100;
+
+            Settings.FindAndUpdate("IconOpacity", opacity);
         }
 
         private bool IsLeagueOrOverlayActive()
@@ -164,9 +188,9 @@ namespace TFT_Overlay
             try
             {
                 ResourceDictionary resources = new ResourceDictionary
-                                               {
-                                                   Source = new Uri("pack://application:,,,/Resource/Localization/ItemStrings_" + locale + ".xaml", UriKind.Absolute)
-                                               };
+                {
+                    Source = new Uri("pack://application:,,,/Resource/Localization/ItemStrings_" + locale + ".xaml", UriKind.Absolute)
+                };
 
 
                 ResourceDictionary current = System.Windows.Application.Current.Resources.MergedDictionaries.FirstOrDefault(
@@ -188,25 +212,41 @@ namespace TFT_Overlay
 
         private void Localization_Credits(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "de-DE: Revyn#0969\nes-AR: Oscarinom\nes-MX: Jukai#3434\nfr-FR: Darkneight\nHU: Edizone#6157\nit-IT: BlackTYWhite#0943\nJA: つかぽん＠PKMotion#8731\nPL: Czapson#9774\npt-BR: Bigg#4019\nRU: Jeremy Buttson#2586\nSL: Shokugeki#0012\nvi-VN: GodV759\nzh-CN: nevex#4441\nzh-TW: noheart#6977\n",
-                "Localization Credits");
+            StringBuilder msgBoxText = new StringBuilder();
+            msgBoxText.AppendLine("de-DE: Revyn#0969");
+            msgBoxText.AppendLine("es-AR: Oscarinom");
+            msgBoxText.AppendLine("es-MX: Jukai#3434");
+            msgBoxText.AppendLine("fr-FR: Darkneight");
+            msgBoxText.AppendLine("HU: Edizone#6157");
+            msgBoxText.AppendLine("it-IT: BlackTYWhite#0943");
+            msgBoxText.AppendLine("JA: つかぽん＠PKMotion#8731");
+            msgBoxText.AppendLine("PL: Czapson#9774");
+            msgBoxText.AppendLine("pt-BR: Bigg#4019");
+            msgBoxText.AppendLine("RU: Jeremy Buttson#2586");
+            msgBoxText.AppendLine("SL: Shokugeki#0012");
+            msgBoxText.AppendLine("vi-VN: GodV759");
+            msgBoxText.AppendLine("zh-CN: nevex#4441");
+            msgBoxText.AppendLine("zh-TW: noheart#6977");
+
+            MessageBox.Show(msgBoxText.ToString(), "Localization Credits");
         }
 
         /// <summary>
-        ///     Takes MenuItem, and passes its Header into LoadStringresource()
+        ///     Takes MenuItem, and passes its Header into LoadStringResource()
         /// </summary>
         /// <param name="sender">Should be of type MenuItem</param>
         /// <param name="e"></param>
         private void Localization_Handler(object sender, RoutedEventArgs e)
         {
-            if (sender is MenuItem menuItem)
+            if (!(sender is MenuItem menuItem))
             {
-                string tag = menuItem.Header.ToString();
-                this.LoadStringResource(tag);
-
-                Settings.FindAndUpdate("Language", tag);
+                return;
             }
+
+            string tag = menuItem.Header.ToString();
+            this.LoadStringResource(tag);
+
+            Settings.FindAndUpdate("Language", tag);
         }
 
         private void LocalizationHelp_Click(object sender, RoutedEventArgs e)
@@ -221,7 +261,7 @@ namespace TFT_Overlay
 
         private void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ((Control) sender).Cursor = this.LoLPointer;
+            ((Control)sender).Cursor = this.loLPointer;
             if (this.CanDrag)
             {
                 this.DragMove();
@@ -230,17 +270,17 @@ namespace TFT_Overlay
 
         private void MainWindow_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ((Control) sender).Cursor = this.LoLNormal;
+            ((Control)sender).Cursor = this.loLNormal;
         }
 
         private void MainWindow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ((Control) sender).Cursor = this.LoLHover;
+            ((Control)sender).Cursor = this.loLHover;
         }
 
         private void MainWindow_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ((Control) sender).Cursor = this.LoLNormal;
+            ((Control)sender).Cursor = this.loLNormal;
         }
 
         private void MenuItem_AutoUpdate(object sender, RoutedEventArgs e)

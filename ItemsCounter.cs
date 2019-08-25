@@ -7,8 +7,8 @@ namespace TFT_Overlay
 {
     public class ItemsCounter : UserControl
     {
-        private ICommand _downCommand;
-        private ICommand _upCommand;
+        private ICommand downCommand;
+        private ICommand upCommand;
 
         #region Methods...
 
@@ -26,9 +26,9 @@ namespace TFT_Overlay
 
         #region Commands...
 
-        public ICommand UpCommand => this._upCommand ?? (this._upCommand = new DelegateCommand(this.UpPoints));
+        public ICommand UpCommand => this.upCommand ?? (this.upCommand = new DelegateCommand(this.UpPoints));
 
-        public ICommand DownCommand => this._downCommand ?? (this._downCommand = new DelegateCommand(this.DownPoints));
+        public ICommand DownCommand => this.downCommand ?? (this.downCommand = new DelegateCommand(this.DownPoints));
 
         #endregion
 
